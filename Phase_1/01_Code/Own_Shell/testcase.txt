@@ -1,0 +1,5 @@
+built in commands cd, echo, pwd,
+    exit
+
+        external commands ls,
+    cp, mv, cat, grep, nano, vim

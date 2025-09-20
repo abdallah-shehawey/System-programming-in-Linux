@@ -1,0 +1,8 @@
+argc = 7
+argv[0] = ./myarg
+argv[1] = 1
+argv[2] = 2
+argv[3] = 3
+argv[4] = 4
+argv[5] = 4
+argv[6] = 5
