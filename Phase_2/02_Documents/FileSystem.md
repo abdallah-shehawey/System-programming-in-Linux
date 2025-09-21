@@ -13,6 +13,7 @@
 - [Print Partition Table Info](#print-partition-table-info)
 - [Reload Partition Table Without Reboot](#reload-partition-table-without-reboot)
 - [Advanced Topics FYI](#advanced-topics-fyi)
+- [GPT Layout](#guid-partition-table-gpt-scheme-breakdown)
 
 ---
 
@@ -338,4 +339,3 @@ Each entry describes a single model unit (layer, block, embedding, normalization
 | 0x38   | 72 bytes | **Layer name** — human-readable name (UTF-16LE), e.g., "TransformerBlock_12" |
 
 ---
-
