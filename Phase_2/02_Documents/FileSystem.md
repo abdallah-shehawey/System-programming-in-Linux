@@ -339,3 +339,9 @@ Each entry describes a single model unit (layer, block, embedding, normalization
 | 0x38   | 72 bytes | **Layer name** — human-readable name (UTF-16LE), e.g., "TransformerBlock_12" |
 
 ---
+---
+---
+
+```bash
+man fs
+```
