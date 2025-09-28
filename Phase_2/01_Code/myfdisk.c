@@ -55,28 +55,28 @@ int is_gpt(int fd)
     return 0;
   }
 
-  // Check if there's a GPT protective MBR entry (type 0xEE)
+  //GPT type 0xEE
   MBRPartitionEntry *table_entry_ptr = (MBRPartitionEntry *)&buf[446];
   for (int i = 0; i < 4; i++)
   {
     if (table_entry_ptr[i].partition_type == 0xEE)
     {
-      return 1; // GPT protective MBR found
+      return 1;
     }
   }
 
-  // Also check GPT signature directly
+  // GPT signature
   GPTHeader gpt;
   lseek(fd, (off_t)512, SEEK_SET);
   if (read(fd, &gpt, sizeof(GPTHeader)) == sizeof(GPTHeader))
   {
     if (gpt.signature == 0x5452415020494645ULL)
     {
-      return 1; // Valid GPT signature
+      return 1;
     }
   }
 
-  return 0; // Not GPT
+  return 0;
 }
 
 const char *mbr_partition_type_name(uint8_t id)
