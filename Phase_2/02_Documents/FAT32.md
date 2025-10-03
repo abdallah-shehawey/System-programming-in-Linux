@@ -10,7 +10,7 @@
 * Initially used for **floppy disks**, it was later adapted for use on hard disks and other devices.
 * The continuous increase in disk drive capacity led to several improved versions: **FAT12, FAT16, FAT32, and exFAT**.
 * FAT was eventually replaced by **NTFS** as the default file system in Microsoft operating systems, starting with **Windows XP**.
-* Despite its age, **FAT** is still commonly used on smaller-capacity storage like **USB flash drives**, **SD cards**, **MMC**, and **eMMC**. The primary reason is its **excellent compatibility across different operating systems and embedded systems, and its ease of implementation.**
+* Despite its age, **FAT** is still commonly used on smaller-capacity storage like **USB flash drives**, **SD cards**, **MMC**, and **eMMC**. The primary reason is its <u>**excellent compatibility across different operating systems and embedded systems, and its ease of implementation.**</u>
 * **FAT32** is the most recent major version of the FAT file system family.
 ---
 ## Design of The FAT File System
@@ -84,3 +84,5 @@ The image shows how a specific file is read by forming a "chain":
 7. When it reaches entry #**`11`**, it finds the **`EOC`** marker. At this point, it knows the file is complete and stops the reading process.
 
 **In short:** The Directory Entry gives you the **starting point of the chain**, and the FAT allows you to follow that chain link by link until you reach the end.
+
+
