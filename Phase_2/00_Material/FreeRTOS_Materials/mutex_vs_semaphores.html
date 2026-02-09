@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTOS Synchronization: Mutex vs Semaphores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; user-select: none; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Smooth Transitions */
+        .tab-content { display: none; opacity: 0; transition: opacity 0.2s ease-in-out; }
+        .tab-content.active { display: flex; opacity: 1; }
+        
+        /* Card Styling */
+        .panel-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        /* Task States */
+        .task-running { border-left: 4px solid #22c55e; background: #f0fdf4; }
+        .task-blocked { border-left: 4px solid #ef4444; background: #fef2f2; opacity: 0.9; }
+        .task-owner   { border-left: 4px solid #6366f1; background: #eef2ff; transform: scale(1.02); box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2); }
+        .task-holding { border-left: 4px solid #3b82f6; background: #eff6ff; }
+
+        /* Error Animation */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+        .error-shake {
+            animation: shake 0.4s ease-in-out;
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
+            box-shadow: 0 0 0 2px #f87171 !important;
+        }
+
+        /* Custom Scrollbar for Logs */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Button Disabled State (Visual Only) */
+        .btn-disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-20 shadow-sm flex-shrink-0">
+        <div class="flex items-center gap-3">
+            <div class="bg-slate-900 text-white p-2 rounded-lg"><i class="ph ph-traffic-signal text-xl"></i></div>
+            <div>
+                <h1 class="font-bold text-lg text-slate-800 leading-none">RTOS Synchronization</h1>
+                <p class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1">Interactive Learning Lab</p>
+            </div>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <nav class="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
+            <button onclick="switchTab('mutex')" id="tab-btn-mutex" class="px-4 py-2 text-sm font-bold rounded-md transition-all text-slate-600 hover:text-slate-900">
+                <i class="ph ph-lock-key mr-1"></i> Mutex
+            </button>
+            <button onclick="switchTab('binary')" id="tab-btn-binary" class="px-4 py-2 text-sm font-bold rounded-md transition-all text-slate-600 hover:text-slate-900">
+                <i class="ph ph-flag mr-1"></i> Binary Sem
+            </button>
+            <button onclick="switchTab('counting')" id="tab-btn-counting" class="px-4 py-2 text-sm font-bold rounded-md transition-all text-slate-600 hover:text-slate-900">
+                <i class="ph ph-stack mr-1"></i> Counting Sem
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow relative bg-slate-50 overflow-hidden">
+
+        <!-- ===== TAB 1: MUTEX ===== -->
+        <div id="view-mutex" class="tab-content h-full w-full flex-row">
+            <!-- Left: Simulation Area -->
+            <div class="flex-1 p-8 flex flex-col gap-6 overflow-y-auto">
+                
+                <!-- Shared Resource -->
+                <div class="flex-grow flex flex-col items-center justify-center relative min-h-[250px] border-2 border-dashed border-slate-300 rounded-2xl bg-white/50">
+                    <div class="absolute top-3 left-3 text-xs font-bold text-slate-400 uppercase tracking-widest">Shared Resource (e.g., I2C Bus)</div>
+                    
+                    <!-- The Lock Visualization -->
+                    <div id="mutex-lock-visual" class="w-32 h-32 rounded-full border-8 border-slate-200 flex flex-col items-center justify-center transition-all duration-300 shadow-xl bg-white z-10">
+                        <i id="mutex-icon" class="ph ph-lock-key-open text-4xl text-slate-400 mb-1 transition-all"></i>
+                        <span id="mutex-text" class="text-[10px] font-bold uppercase text-slate-400">Free</span>
+                    </div>
+
+                    <!-- Connection Lines -->
+                    <div id="line-task-a" class="absolute top-1/2 left-0 w-1/2 h-1 bg-slate-200 -z-0 origin-right transition-colors duration-300"></div>
+                    <div id="line-task-b" class="absolute top-1/2 right-0 w-1/2 h-1 bg-slate-200 -z-0 origin-left transition-colors duration-300"></div>
+                </div>
+
+                <!-- Tasks Control -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Task A -->
+                    <div id="card-mutex-a" class="panel-card p-5 relative">
+                        <div class="absolute -top-3 left-4 px-2 py-1 bg-white border border-slate-200 rounded text-[10px] font-bold text-slate-500 shadow-sm">PRIORITY 2</div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-slate-700">Task A</h4>
+                            <span id="status-mutex-a" class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded">RUNNING</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="mutexTake('A')" class="flex-1 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded text-xs font-bold shadow-sm active:scale-95 transition">TAKE Key</button>
+                            <button onclick="mutexGive('A')" class="flex-1 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-600 rounded text-xs font-bold shadow-sm active:scale-95 transition">GIVE Key</button>
+                        </div>
+                    </div>
+
+                    <!-- Task B -->
+                    <div id="card-mutex-b" class="panel-card p-5 relative">
+                        <div class="absolute -top-3 left-4 px-2 py-1 bg-white border border-slate-200 rounded text-[10px] font-bold text-slate-500 shadow-sm">PRIORITY 1</div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-slate-700">Task B</h4>
+                            <span id="status-mutex-b" class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded">RUNNING</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="mutexTake('B')" class="flex-1 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded text-xs font-bold shadow-sm active:scale-95 transition">TAKE Key</button>
+                            <button onclick="mutexGive('B')" class="flex-1 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-600 rounded text-xs font-bold shadow-sm active:scale-95 transition">GIVE Key</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: State Panel -->
+            <div class="w-80 bg-white border-l border-slate-200 flex flex-col z-20 shadow-lg">
+                <div class="p-4 bg-indigo-50 border-b border-indigo-100 overflow-y-auto" style="max-height: 40%;">
+                    <h3 class="text-xs font-bold text-indigo-800 uppercase tracking-wider mb-2 flex items-center gap-2"><i class="ph ph-book-open"></i> Rules & Usage</h3>
+                    <ul class="text-xs text-indigo-900 space-y-2 list-disc list-inside mb-4">
+                        <li><strong>Strict Ownership:</strong> Only the task that locked the Mutex can unlock it.</li>
+                        <li><strong>Priority Inheritance:</strong> Prevents priority inversion by boosting the holder's priority.</li>
+                    </ul>
+                    
+                    <div class="mt-3 pt-3 border-t border-indigo-200">
+                        <h4 class="font-bold text-indigo-900 text-[10px] uppercase mb-1">Common Use Cases</h4>
+                        <ul class="text-xs text-indigo-800 space-y-1 list-disc list-inside opacity-90">
+                            <li>Protecting shared hardware (I2C, SPI, UART).</li>
+                            <li>Thread-safe access to global variables.</li>
+                            <li>Critical sections involving Read-Modify-Write.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-slate-50 border-b border-slate-200">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Kernel State</h3>
+                    <div class="space-y-2 font-mono text-xs">
+                        <div class="flex justify-between p-2 bg-white rounded border border-slate-200">
+                            <span class="text-slate-500">Mutex Value:</span>
+                            <span id="val-mutex" class="font-bold text-green-600">1 (Available)</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded border border-slate-200">
+                            <span class="text-slate-500">Current Owner:</span>
+                            <span id="owner-mutex" class="font-bold text-slate-400">None</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex flex-col p-4 overflow-hidden">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Event Log</h3>
+                    <div id="log-mutex" class="flex-1 overflow-y-auto space-y-2 text-xs font-mono"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB 2: BINARY SEMAPHORE ===== -->
+        <div id="view-binary" class="tab-content h-full w-full flex-row">
+            <div class="flex-1 p-8 flex flex-col gap-6 overflow-y-auto justify-center">
+                <div class="flex items-center justify-between gap-4 px-8">
+                    <!-- ISR -->
+                    <div class="w-1/3 flex flex-col items-center gap-3">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Hardware Context</div>
+                        <button onclick="binGive()" class="w-24 h-24 rounded-full bg-red-500 hover:bg-red-600 text-white shadow-xl border-4 border-red-100 flex flex-col items-center justify-center gap-1 active:scale-95 transition-transform group">
+                            <i class="ph ph-lightning text-3xl group-hover:text-yellow-300 transition-colors"></i>
+                            <span class="font-bold text-xs">ISR</span>
+                        </button>
+                        <span class="text-[10px] text-slate-500 text-center font-mono">xSemaphoreGiveFromISR()</span>
+                    </div>
+                    <!-- SEMAPHORE -->
+                    <div class="w-1/3 flex flex-col items-center justify-center relative">
+                        <div class="h-1 w-full bg-slate-200 absolute top-1/2 z-0"></div>
+                        <i class="ph ph-arrow-right absolute top-1/2 right-0 -translate-y-1/2 text-slate-300 text-lg"></i>
+                        <div id="bin-visual" class="w-20 h-20 bg-white border-2 border-slate-300 rounded-xl z-10 flex items-center justify-center shadow-sm transition-all duration-300">
+                            <i id="bin-icon" class="ph ph-flag text-3xl text-slate-300 transition-all"></i>
+                        </div>
+                        <div id="bin-label" class="mt-2 text-xs font-bold text-slate-400 bg-white px-2 py-1 rounded border border-slate-200 z-10">EMPTY</div>
+                    </div>
+                    <!-- TASK -->
+                    <div class="w-1/3">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 text-center">Task Context</div>
+                        <div id="card-bin-task" class="panel-card p-5 task-blocked transition-all">
+                            <div class="flex justify-between items-center mb-4">
+                                <h4 class="font-bold text-slate-700">Handler Task</h4>
+                                <span id="status-bin-task" class="text-[10px] font-bold bg-red-100 text-red-700 px-2 py-1 rounded">BLOCKED</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mb-4 h-8 italic">Waiting for interrupt signal...</p>
+                            <button onclick="binTake()" class="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-bold shadow-sm active:scale-95 transition font-mono">
+                                xSemaphoreTake()
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-80 bg-white border-l border-slate-200 flex flex-col z-20 shadow-lg">
+                <!-- RULES -->
+                <div class="p-4 bg-emerald-50 border-b border-emerald-100 overflow-y-auto" style="max-height: 40%;">
+                    <h3 class="text-xs font-bold text-emerald-800 uppercase tracking-wider mb-2 flex items-center gap-2"><i class="ph ph-book-open"></i> Rules & Usage</h3>
+                    <ul class="text-xs text-emerald-900 space-y-2 list-disc list-inside mb-4">
+                        <li><strong>No Ownership:</strong> ISR signals, Task waits.</li>
+                        <li><strong>Max Count 1:</strong> Signaling a full semaphore does nothing (event latching).</li>
+                    </ul>
+
+                    <div class="mt-3 pt-3 border-t border-emerald-200">
+                        <h4 class="font-bold text-emerald-900 text-[10px] uppercase mb-1">Common Use Cases</h4>
+                        <ul class="text-xs text-emerald-800 space-y-1 list-disc list-inside opacity-90">
+                            <li><strong>Deferred Interrupt Processing:</strong> ISR gives sem, High Priority Task takes it to do heavy work.</li>
+                            <li><strong>Task Synchronization:</strong> Signaling one task from another.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-1 p-4 overflow-hidden flex flex-col">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Internal State</h3>
+                    <div id="log-binary" class="flex-1 overflow-y-auto space-y-2 text-xs font-mono"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB 3: COUNTING SEMAPHORE ===== -->
+        <div id="view-counting" class="tab-content h-full w-full flex-row">
+            <div class="flex-1 p-8 flex flex-col gap-6 overflow-y-auto">
+                <div class="flex gap-8 h-full">
+                    <!-- POOL VISUALIZATION -->
+                    <div class="w-1/3 flex flex-col">
+                        <div class="bg-slate-800 text-white rounded-t-xl p-3 text-center text-xs font-bold uppercase tracking-widest">Resource Pool</div>
+                        <div class="bg-slate-200 rounded-b-xl p-4 flex-grow flex flex-col justify-end gap-2 border-x border-b border-slate-300 shadow-inner">
+                            <div id="pool-slot-3" class="h-16 w-full bg-blue-500 rounded-lg shadow-md border border-blue-400 flex items-center justify-center text-white font-bold text-xs transition-all opacity-100 transform translate-y-0">Buffer 3</div>
+                            <div id="pool-slot-2" class="h-16 w-full bg-blue-500 rounded-lg shadow-md border border-blue-400 flex items-center justify-center text-white font-bold text-xs transition-all opacity-100 transform translate-y-0">Buffer 2</div>
+                            <div id="pool-slot-1" class="h-16 w-full bg-blue-500 rounded-lg shadow-md border border-blue-400 flex items-center justify-center text-white font-bold text-xs transition-all opacity-100 transform translate-y-0">Buffer 1</div>
+                        </div>
+                        <div class="text-center mt-3 font-mono text-sm font-bold text-slate-600">Available: <span id="cnt-val-display" class="text-blue-600 text-xl">3</span> / 3</div>
+                    </div>
+
+                    <!-- TASKS LIST -->
+                    <div class="flex-1 flex flex-col">
+                        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-1">Worker Tasks</h3>
+                        <div class="flex-1 overflow-y-auto pr-2 space-y-3" id="cnt-task-container">
+                            <!-- Tasks generated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Logs -->
+            <div class="w-80 bg-white border-l border-slate-200 flex flex-col z-20 shadow-lg">
+                <!-- RULES -->
+                <div class="p-4 bg-blue-50 border-b border-blue-100 overflow-y-auto" style="max-height: 40%;">
+                    <h3 class="text-xs font-bold text-blue-800 uppercase tracking-wider mb-2 flex items-center gap-2"><i class="ph ph-book-open"></i> Rules & Usage</h3>
+                    <ul class="text-xs text-blue-900 space-y-2 list-disc list-inside mb-4">
+                        <li><strong>Give (Signal):</strong> Returns a resource. Fails if pool is full.</li>
+                        <li><strong>Take (Wait):</strong> Decrements count. Blocks if count is 0.</li>
+                    </ul>
+
+                    <div class="mt-3 pt-3 border-t border-blue-200">
+                        <h4 class="font-bold text-blue-900 text-[10px] uppercase mb-1">Common Use Cases</h4>
+                        <ul class="text-xs text-blue-800 space-y-1 list-disc list-inside opacity-90">
+                            <li><strong>Resource Pools:</strong> Managing a fixed number of Network Buffers or DMA Channels.</li>
+                            <li><strong>Event Counting:</strong> Counting events that occur in bursts (e.g., button presses) to be processed later.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-1 p-4 overflow-hidden flex flex-col">
+                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Transaction Log</h3>
+                    <div id="log-counting" class="flex-1 overflow-y-auto space-y-2 text-xs font-mono"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- GLOBAL STATE & UTILS ---
+        const colors = { mutex: 'indigo', binary: 'emerald', counting: 'blue' };
+
+        function switchTab(id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(`view-${id}`).classList.add('active');
+            
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.className = "px-4 py-2 text-sm font-medium rounded-md text-slate-500 hover:text-slate-800 transition-colors";
+            });
+            const activeBtn = document.getElementById(`tab-btn-${id}`);
+            const color = colors[id];
+            activeBtn.className = `px-4 py-2 text-sm font-bold rounded-md bg-${color}-50 text-${color}-700 shadow-sm border border-${color}-200 transition-all`;
+        }
+
+        function log(tab, msg, type='info') {
+            const container = document.getElementById(`log-${tab}`);
+            const div = document.createElement('div');
+            const time = new Date().toLocaleTimeString('en-US', {hour12: false, hour:'2-digit', minute:'2-digit', second:'2-digit'});
+            
+            let style = "text-slate-600 border-l-2 border-slate-300 pl-2";
+            if (type === 'error') style = "text-red-600 border-l-2 border-red-400 pl-2 bg-red-50 p-1 rounded-r font-bold";
+            if (type === 'success') style = "text-green-700 border-l-2 border-green-500 pl-2 bg-green-50 p-1 rounded-r";
+            if (type === 'warn') style = "text-amber-600 border-l-2 border-amber-400 pl-2 bg-amber-50 p-1 rounded-r";
+
+            div.className = style;
+            div.innerHTML = `<span class="opacity-50 text-[10px] mr-1">${time}</span> ${msg}`;
+            container.prepend(div);
+        }
+
+        function triggerErrorVisual(elementId) {
+            const el = document.getElementById(elementId);
+            el.classList.remove('error-shake');
+            void el.offsetWidth; // Trigger reflow
+            el.classList.add('error-shake');
+        }
+
+        // --- MUTEX LOGIC ---
+        let mutexState = { locked: false, owner: null, blocked: null };
+
+        function updateMutexVisuals() {
+            const lock = document.getElementById('mutex-lock-visual');
+            const icon = document.getElementById('mutex-icon');
+            const text = document.getElementById('mutex-text');
+            const lineA = document.getElementById('line-task-a');
+            const lineB = document.getElementById('line-task-b');
+            const val = document.getElementById('val-mutex');
+            const ownerDisp = document.getElementById('owner-mutex');
+
+            // Reset Lines
+            lineA.className = "absolute top-1/2 left-0 w-1/2 h-1 bg-slate-200 -z-0 origin-right transition-colors duration-300";
+            lineB.className = "absolute top-1/2 right-0 w-1/2 h-1 bg-slate-200 -z-0 origin-left transition-colors duration-300";
+
+            if (mutexState.locked) {
+                lock.className = "w-32 h-32 rounded-full border-8 border-indigo-500 flex flex-col items-center justify-center transition-all duration-300 shadow-xl bg-indigo-50 z-10 scale-110";
+                icon.className = "ph ph-lock-key text-4xl text-indigo-600 mb-1";
+                text.innerText = "Locked"; text.className = "text-[10px] font-bold uppercase text-indigo-600";
+                val.innerText = "0 (Taken)"; val.className = "font-bold text-red-500";
+                ownerDisp.innerText = "Task " + mutexState.owner; ownerDisp.className = "font-bold text-indigo-600";
+
+                if(mutexState.owner === 'A') lineA.className = "absolute top-1/2 left-0 w-1/2 h-1 bg-indigo-500 -z-0 origin-right transition-colors duration-300";
+                if(mutexState.owner === 'B') lineB.className = "absolute top-1/2 right-0 w-1/2 h-1 bg-indigo-500 -z-0 origin-left transition-colors duration-300";
+            } else {
+                lock.className = "w-32 h-32 rounded-full border-8 border-slate-200 flex flex-col items-center justify-center transition-all duration-300 shadow-xl bg-white z-10";
+                icon.className = "ph ph-lock-key-open text-4xl text-slate-400 mb-1";
+                text.innerText = "Free"; text.className = "text-[10px] font-bold uppercase text-slate-400";
+                val.innerText = "1 (Available)"; val.className = "font-bold text-green-600";
+                ownerDisp.innerText = "None"; ownerDisp.className = "font-bold text-slate-400";
+            }
+
+            // Update Cards
+            ['A', 'B'].forEach(t => {
+                const card = document.getElementById(`card-mutex-${t.toLowerCase()}`);
+                const status = document.getElementById(`status-mutex-${t.toLowerCase()}`);
+                
+                // Reset styling
+                card.className = "panel-card p-5 relative";
+                status.className = "text-[10px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded";
+                status.innerText = "RUNNING";
+
+                // Check Ownership
+                if (mutexState.locked && mutexState.owner === t) {
+                    card.classList.add('task-owner', 'border-indigo-500');
+                    status.innerText = "OWNER";
+                    status.className = "text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded";
+                }
+
+                // Check Blocked State
+                if (mutexState.blocked === t) {
+                    card.classList.add('task-blocked');
+                    status.innerText = "BLOCKED";
+                    status.className = "text-[10px] font-bold bg-red-100 text-red-700 px-2 py-1 rounded";
+                }
+            });
+        }
+
+        function mutexTake(task) {
+            if (mutexState.locked) {
+                if (mutexState.owner === task) {
+                    log('mutex', `Task ${task} already owns the mutex.`, 'warn');
+                } else {
+                    mutexState.blocked = task;
+                    log('mutex', `Task ${task} BLOCKED. Waiting for Mutex...`, 'error');
+                    updateMutexVisuals();
+                }
+            } else {
+                mutexState.locked = true;
+                mutexState.owner = task;
+                if(mutexState.blocked === task) mutexState.blocked = null;
+                log('mutex', `Task ${task} Acquired Mutex.`, 'success');
+                updateMutexVisuals();
+            }
+        }
+
+        function mutexGive(task) {
+            if (!mutexState.locked) {
+                log('mutex', `Task ${task} failed to give. Mutex is not locked.`, 'warn');
+                return;
+            }
+            if (mutexState.owner !== task) {
+                log('mutex', `VIOLATION: Task ${task} tried to release Task ${mutexState.owner}'s lock!`, 'error');
+                triggerErrorVisual(`card-mutex-${task.toLowerCase()}`);
+                return;
+            }
+
+            log('mutex', `Task ${task} Released Mutex.`, 'info');
+
+            // Automatic Handoff Logic
+            if (mutexState.blocked) {
+                const nextTask = mutexState.blocked;
+                mutexState.owner = nextTask;
+                mutexState.blocked = null;
+                // Mutex remains locked, just switched owners
+                log('mutex', `-> Scheduler wakes Task ${nextTask}.`, 'info');
+                log('mutex', `-> Task ${nextTask} automatically Acquired Mutex!`, 'success');
+            } else {
+                mutexState.locked = false;
+                mutexState.owner = null;
+            }
+            updateMutexVisuals();
+        }
+
+
+        // --- BINARY SEMAPHORE LOGIC ---
+        let binState = 0; 
+
+        function updateBinaryVisuals() {
+            const visual = document.getElementById('bin-visual');
+            const icon = document.getElementById('bin-icon');
+            const label = document.getElementById('bin-label');
+            const taskCard = document.getElementById('card-bin-task');
+            const taskStatus = document.getElementById('status-bin-task');
+
+            if (binState === 1) {
+                visual.className = "w-20 h-20 bg-emerald-50 border-2 border-emerald-500 rounded-xl z-10 flex items-center justify-center shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all scale-110";
+                icon.className = "ph ph-flag-banner text-4xl text-emerald-600";
+                label.innerText = "SIGNALED"; label.className = "mt-2 text-[10px] font-bold text-emerald-600 bg-white px-2 py-1 rounded border border-emerald-200 z-10 shadow-sm";
+                taskCard.className = "panel-card p-5 task-running transition-all";
+                taskStatus.innerText = "READY";
+                taskStatus.className = "text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-1 rounded";
+            } else {
+                visual.className = "w-20 h-20 bg-white border-2 border-slate-300 rounded-xl z-10 flex items-center justify-center shadow-sm transition-all";
+                icon.className = "ph ph-flag text-3xl text-slate-300";
+                label.innerText = "EMPTY"; label.className = "mt-2 text-[10px] font-bold text-slate-400 bg-white px-2 py-1 rounded border border-slate-200 z-10";
+                taskCard.className = "panel-card p-5 task-blocked transition-all";
+                taskStatus.innerText = "BLOCKED";
+                taskStatus.className = "text-[10px] font-bold bg-red-100 text-red-700 px-2 py-1 rounded";
+            }
+        }
+
+        function binGive() {
+            if (binState === 1) {
+                log('binary', "ISR Give: Signal dropped (Semaphore full).", 'warn');
+            } else {
+                binState = 1;
+                log('binary', "ISR Give: Interrupt Signal Sent.", 'success');
+                updateBinaryVisuals();
+            }
+        }
+
+        function binTake() {
+            if (binState === 1) {
+                binState = 0;
+                log('binary', "Task Take: Signal received. Unblocked.", 'info');
+                updateBinaryVisuals();
+            } else {
+                log('binary', "Task Take: No signal available. Task Blocked.", 'error');
+                triggerErrorVisual('card-bin-task');
+            }
+        }
+
+
+        // --- COUNTING SEMAPHORE LOGIC ---
+        let cntCount = 3;
+        const cntMax = 3;
+        const tasks = [
+            { id: 1, state: 'IDLE' }, { id: 2, state: 'IDLE' }, { id: 3, state: 'IDLE' }, 
+            { id: 4, state: 'IDLE' }, { id: 5, state: 'IDLE' }
+        ];
+
+        function renderCountingTasks() {
+            const container = document.getElementById('cnt-task-container');
+            container.innerHTML = '';
+            tasks.forEach(t => {
+                let statusClass = "bg-slate-100 text-slate-500";
+                let cardClass = "bg-white border border-slate-200";
+                let btnTakeDisabled = false;
+                
+                if (t.state === 'HOLDING') {
+                    statusClass = "bg-blue-100 text-blue-700";
+                    cardClass = "bg-blue-50 border border-blue-300 shadow-sm";
+                    btnTakeDisabled = true; 
+                } else if (t.state === 'BLOCKED') {
+                    statusClass = "bg-red-100 text-red-700";
+                    cardClass = "bg-red-50 border border-red-300 opacity-90";
+                    btnTakeDisabled = true;
+                }
+
+                container.innerHTML += `
+                    <div id="cnt-task-${t.id}" class="${cardClass} p-3 rounded-lg flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center font-bold text-xs shadow-sm text-slate-600">${t.id}</div>
+                            <span class="text-xs font-bold ${t.state === 'BLOCKED' ? 'text-red-600' : 'text-slate-700'}">Task ${t.id}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-bold px-2 py-1 rounded ${statusClass}">${t.state}</span>
+                            <div class="flex gap-1">
+                                <button onclick="cntTake(${t.id})" ${btnTakeDisabled ? 'disabled' : ''} class="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white text-[10px] rounded font-bold shadow-sm active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed">TAKE</button>
+                                <button onclick="cntGive(${t.id})" class="px-2 py-1 bg-white border border-slate-300 hover:bg-slate-50 text-slate-600 text-[10px] rounded font-bold shadow-sm active:scale-95 transition">GIVE</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function updateCountingVisuals() {
+            for(let i=1; i<=3; i++) {
+                const slot = document.getElementById(`pool-slot-${i}`);
+                if (i <= cntCount) {
+                    slot.className = "h-16 w-full bg-blue-500 rounded-lg shadow-md border border-blue-400 flex items-center justify-center text-white font-bold text-xs transition-all opacity-100 transform translate-y-0";
+                } else {
+                    slot.className = "h-16 w-full bg-slate-200 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 font-bold text-xs transition-all opacity-50 transform translate-y-2";
+                }
+            }
+            const disp = document.getElementById('cnt-val-display');
+            disp.innerText = cntCount;
+            disp.className = cntCount === 0 ? "text-red-500 text-xl font-bold" : "text-blue-600 text-xl font-bold";
+            renderCountingTasks();
+        }
+
+        function cntTake(id) {
+            const t = tasks.find(x => x.id === id);
+            if (t.state === 'HOLDING') return; 
+
+            if (cntCount > 0) {
+                cntCount--;
+                t.state = 'HOLDING';
+                log('counting', `Task ${id} acquired resource. (${cntCount} remaining)`, 'success');
+            } else {
+                t.state = 'BLOCKED';
+                log('counting', `Task ${id} tried to Take. No resources available. Blocked.`, 'error');
+            }
+            updateCountingVisuals();
+        }
+
+        function cntGive(id) {
+            const t = tasks.find(x => x.id === id);
+            
+            // LOGIC ERROR DEMONSTRATION
+            if (t.state !== 'HOLDING') {
+                log('counting', `LOGIC ERROR: Task ${id} tried to Give but doesn't hold a resource!`, 'error');
+                triggerErrorVisual(`cnt-task-${id}`);
+                return;
+            }
+
+            if (cntCount >= cntMax) {
+                log('counting', `Error: Overflow! Pool is already full.`, 'warn');
+                return;
+            }
+
+            cntCount++;
+            t.state = 'IDLE'; 
+            log('counting', `Task ${id} returned resource. (${cntCount} available)`, 'info');
+
+            const blocked = tasks.find(x => x.state === 'BLOCKED');
+            if (blocked) {
+                cntCount--; 
+                blocked.state = 'HOLDING';
+                log('counting', `-> Wakeup: Task ${blocked.id} Unblocked and Acquired Resource!`, 'success');
+            }
+            updateCountingVisuals();
+        }
+
+        // Init
+        switchTab('mutex');
+        updateMutexVisuals();
+        updateBinaryVisuals();
+        updateCountingVisuals();
+
+    </script>
+</body>
+</html>

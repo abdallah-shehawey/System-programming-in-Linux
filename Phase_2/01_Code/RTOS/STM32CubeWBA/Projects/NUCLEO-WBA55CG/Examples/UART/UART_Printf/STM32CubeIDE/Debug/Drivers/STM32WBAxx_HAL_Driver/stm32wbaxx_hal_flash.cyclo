@@ -1,0 +1,14 @@
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:175:19:HAL_FLASH_Program	4
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:248:19:HAL_FLASH_Program_IT	4
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:315:6:HAL_FLASH_IRQHandler	10
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:470:13:HAL_FLASH_EndOfOperationCallback	1
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:488:13:HAL_FLASH_OperationErrorCallback	1
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:521:19:HAL_FLASH_Unlock	3
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:563:19:HAL_FLASH_Lock	2
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:596:19:HAL_FLASH_OB_Unlock	3
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:618:19:HAL_FLASH_OB_Lock	2
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:636:19:HAL_FLASH_OB_Launch	1
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:677:10:HAL_FLASH_GetError	1
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:701:19:FLASH_WaitForLastOperation	6
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:812:13:FLASH_Program_QuadWord	2
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:857:13:FLASH_Program_Burst	2

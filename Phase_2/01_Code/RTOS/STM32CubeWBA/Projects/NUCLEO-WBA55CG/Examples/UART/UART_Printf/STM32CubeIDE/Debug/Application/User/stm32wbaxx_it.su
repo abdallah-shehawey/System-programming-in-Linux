@@ -1,0 +1,5 @@
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Projects/NUCLEO-WBA55CG/Examples/UART/UART_Printf/Src/stm32wbaxx_it.c:73:6:NMI_Handler	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Projects/NUCLEO-WBA55CG/Examples/UART/UART_Printf/Src/stm32wbaxx_it.c:88:6:HardFault_Handler	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Projects/NUCLEO-WBA55CG/Examples/UART/UART_Printf/Src/stm32wbaxx_it.c:103:6:SVC_Handler	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Projects/NUCLEO-WBA55CG/Examples/UART/UART_Printf/Src/stm32wbaxx_it.c:116:6:PendSV_Handler	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Projects/NUCLEO-WBA55CG/Examples/UART/UART_Printf/Src/stm32wbaxx_it.c:129:6:SysTick_Handler	8	static

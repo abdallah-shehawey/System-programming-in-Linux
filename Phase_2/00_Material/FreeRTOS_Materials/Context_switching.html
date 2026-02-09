@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeRTOS Context Switch Debugger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #e2e8f0; user-select: none; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* SCROLLBARS */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* REGISTER STYLING */
+        .reg-card {
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 4px;
+            padding: 4px 8px; display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.2s;
+        }
+        .reg-name { font-weight: 700; color: #64748b; width: 35px; }
+        .reg-hex { font-family: 'JetBrains Mono', monospace; color: #334155; font-weight: 600; font-size: 0.75rem; }
+        
+        .reg-changed { background-color: #fef08a; border-color: #eab308; transform: scale(1.02); z-index: 5; }
+        .reg-hw { border-left: 3px solid #f97316; background-color: #fff7ed; } 
+        .reg-sw { border-left: 3px solid #2563eb; background-color: #eff6ff; } 
+
+        /* CODE VIEW */
+        .code-row { display: flex; font-family: 'JetBrains Mono', monospace; padding: 1px 0; border-left: 3px solid transparent; }
+        .addr-col { width: 85px; color: #94a3b8; text-align: right; padding-right: 8px; border-right: 1px solid #e2e8f0; margin-right: 8px; flex-shrink: 0; }
+        .src-col { color: #475569; white-space: pre; }
+        
+        .active-row { background-color: #dcfce7; border-left-color: #16a34a; }
+        .active-row .addr-col { color: #166534; font-weight: bold; border-right-color: #86efac; }
+        .active-row .src-col { color: #14532d; font-weight: bold; }
+
+        .isr-row { background-color: #fee2e2; border-left-color: #dc2626; }
+        .isr-row .addr-col { color: #991b1b; font-weight: bold; border-right-color: #fca5a5; }
+        .isr-row .src-col { color: #7f1d1d; font-weight: bold; }
+
+        /* STACK MEMORY MAP */
+        .mem-row { display: flex; font-family: 'JetBrains Mono', monospace; border-bottom: 1px solid #f1f5f9; align-items: center; position: relative; }
+        .mem-loc { width: 85px; color: #94a3b8; padding-left: 6px; border-right: 1px solid #f1f5f9; }
+        .mem-val { flex-grow: 1; text-align: center; color: #cbd5e1; }
+        
+        .mem-active { color: #334155; font-weight: bold; }
+        .bg-hw { background: #ffedd5; color: #c2410c; }
+        .bg-sw { background: #dbeafe; color: #1e40af; }
+        
+        /* SP Arrow Animation */
+        .sp-indicator { background-color: #fef9c3; z-index: 10; }
+        .sp-indicator::after { 
+            content: "◀ SP"; position: absolute; right: 4px; 
+            color: #dc2626; font-weight: 800; font-size: 0.7em; 
+            animation: pulse 1s infinite; 
+        }
+        @keyframes pulse { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+
+        /* RESIZER */
+        .resizer {
+            width: 6px;
+            cursor: col-resize;
+            background-color: #e2e8f0;
+            transition: background 0.2s;
+            z-index: 30;
+        }
+        .resizer:hover, .resizer.dragging { background-color: #3b82f6; }
+    </style>
+</head>
+<body class="h-screen flex flex-col text-slate-800 text-sm">
+
+    <!-- TOP BAR -->
+    <header class="h-12 bg-slate-900 text-white flex items-center px-4 shadow-md z-50 flex-shrink-0 justify-between">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 p-1.5 rounded"><i class="ph ph-cpu text-lg"></i></div>
+            <h1 class="font-bold tracking-wide">FreeRTOS Debugger <span class="font-normal text-slate-400">| Context Switch</span></h1>
+        </div>
+        
+        <div class="flex items-center gap-4 bg-slate-800 px-3 py-1 rounded border border-slate-700">
+            <div class="flex items-center gap-2">
+                <i class="ph ph-text-aa text-slate-400"></i>
+                <input type="range" id="zoom-range" min="10" max="16" value="12" class="w-20 accent-blue-500 h-1">
+            </div>
+            <div class="w-px h-4 bg-slate-600"></div>
+            <div class="flex items-center gap-2">
+                <i class="ph ph-list-dashes text-slate-400"></i>
+                <input type="range" id="density-range" min="18" max="32" value="22" class="w-20 accent-blue-500 h-1">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <main class="flex-1 flex overflow-hidden w-full" id="main-container">
+        
+        <!-- LEFT: CODE -->
+        <section class="flex flex-col border-r border-slate-300 bg-white z-10 shadow-lg" style="width: 320px; min-width: 250px;">
+            <div class="h-8 bg-slate-100 border-b border-slate-200 flex items-center px-3 justify-between">
+                <span class="text-xs font-bold text-slate-600 uppercase"><i class="ph ph-file-code"></i> Flash Memory</span>
+            </div>
+            <div class="flex-1 overflow-y-auto p-1 bg-white" id="code-container">
+                <!-- JS Injects Code Here -->
+            </div>
+        </section>
+
+        <!-- CENTER: REGISTERS -->
+        <section class="flex-1 flex flex-col bg-slate-50 relative min-w-[300px]">
+            <div class="h-8 bg-white border-b border-slate-200 flex items-center px-4 justify-between shadow-sm flex-shrink-0">
+                <span class="text-xs font-bold text-slate-600 uppercase"><i class="ph ph-circuitry"></i> CPU Core</span>
+                <span id="cpu-mode" class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold border border-green-200">THREAD</span>
+            </div>
+
+            <!-- Scrollable Register Grid -->
+            <div class="flex-1 overflow-y-auto p-4 custom-text-size">
+                <div class="grid grid-cols-2 gap-2 max-w-lg mx-auto">
+                    
+                    <!-- Hardware Saved Group -->
+                    <div class="col-span-2 text-[9px] font-bold text-orange-600 uppercase tracking-wider text-center border-b border-orange-200 mb-1 flex justify-between items-end">
+                        <span>Hardware Saved (Auto-Push)</span>
+                    </div>
+                    
+                    <div class="col-span-2 reg-card" id="reg-xpsr">
+                        <div class="flex gap-2"><span class="reg-name text-slate-800">xPSR</span><span class="text-[10px] text-slate-400">Status</span></div>
+                        <span class="reg-hex">0x01000000</span>
+                    </div>
+
+                    <div class="reg-card" id="reg-pc"><span class="reg-name text-slate-800">PC</span><span class="reg-hex">...</span></div>
+                    <div class="reg-card" id="reg-lr"><span class="reg-name text-slate-800">LR</span><span class="reg-hex">...</span></div>
+                    <div class="reg-card" id="reg-r12"><span class="reg-name">R12</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r3"><span class="reg-name">R3</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r2"><span class="reg-name">R2</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r1"><span class="reg-name">R1</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r0"><span class="reg-name">R0</span><span class="reg-hex">00000000</span></div>
+
+                    <!-- Software Saved Group -->
+                    <div class="col-span-2 mt-2 text-[9px] font-bold text-blue-600 uppercase tracking-wider text-center border-b border-blue-200 mb-1 flex justify-between items-end">
+                        <span>Software Saved (Manual Push)</span>
+                    </div>
+
+                    <div class="reg-card" id="reg-r11"><span class="reg-name">R11</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r10"><span class="reg-name">R10</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r9"><span class="reg-name">R9</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r8"><span class="reg-name">R8</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r7"><span class="reg-name">R7</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r6"><span class="reg-name">R6</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r5"><span class="reg-name">R5</span><span class="reg-hex">00000000</span></div>
+                    <div class="reg-card" id="reg-r4"><span class="reg-name">R4</span><span class="reg-hex">00000000</span></div>
+
+                    <!-- SP -->
+                    <div class="col-span-2 mt-2 reg-card bg-blue-50 border-blue-200" id="reg-sp">
+                        <div class="flex gap-2"><span class="reg-name text-blue-700">SP</span><span class="text-[10px] text-blue-400">R13</span></div>
+                        <span class="reg-hex text-blue-800">...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NARRATIVE PANEL -->
+            <div class="bg-white border-t border-slate-300 p-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] flex-shrink-0 z-20">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-slate-800 text-xs uppercase">Sequence Step</h3>
+                    <span id="current-task-badge" class="text-[10px] px-2 py-0.5 rounded font-bold border bg-slate-100 border-slate-200 text-slate-500">Task A</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded p-3 mb-3 h-24 overflow-y-auto">
+                    <p class="text-xs text-slate-600 leading-relaxed custom-text-size" id="narrative-text">Initializing...</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="resetSim()" class="px-4 py-2 border border-slate-300 rounded text-xs font-bold text-slate-600 hover:bg-slate-100">RESET</button>
+                    <button onclick="nextStep()" id="btn-next" class="flex-1 px-4 py-2 bg-blue-700 text-white rounded text-xs font-bold hover:bg-blue-800 shadow flex justify-center items-center gap-2">
+                        NEXT STEP <i class="ph ph-arrow-right font-bold"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESIZER -->
+        <div class="resizer" id="drag-handle"></div>
+
+        <!-- RIGHT: STACKS -->
+        <section class="flex flex-col border-l border-slate-300 bg-white z-10 shadow-lg" id="stack-panel" style="width: 400px; min-width: 250px;">
+            
+            <!-- Stack A -->
+            <div class="flex-1 flex flex-col border-b border-slate-200 overflow-hidden">
+                <div class="h-7 bg-green-50 border-b border-green-100 flex items-center justify-between px-2">
+                    <span class="text-[10px] font-bold text-green-800">Task A Stack (SRAM)</span>
+                    <span class="text-[9px] font-mono text-green-600">Base: 0x20001000</span>
+                </div>
+                <div class="flex-1 overflow-y-auto bg-slate-50" id="stack-a"></div>
+            </div>
+
+            <!-- Stack B -->
+            <div class="flex-1 flex flex-col overflow-hidden">
+                <div class="h-7 bg-blue-50 border-b border-blue-100 flex items-center justify-between px-2">
+                    <span class="text-[10px] font-bold text-blue-800">Task B Stack (SRAM)</span>
+                    <span class="text-[9px] font-mono text-blue-600">Base: 0x20002000</span>
+                </div>
+                <div class="flex-1 overflow-y-auto bg-slate-50" id="stack-b"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- CONSTANTS ---
+        const STACK_A_TOP = 0x20001000;
+        const STACK_B_TOP = 0x20002000;
+        
+        const ADDR = {
+            TASKA: '0x08001008',
+            TASKB: '0x08002008',
+            ISR_ENTRY: '0x08003000',
+            ISR_SAVE: '0x08003008',
+            ISR_SWITCH: '0x0800300C',
+            ISR_RESTORE: '0x08003010',
+            ISR_EXIT: '0x08003014'
+        };
+
+        // --- CONTEXT DATA (INFORMATIVE VALUES) ---
+        // Task A Data (Starting with A)
+        const CTX_A = {
+            r0:'42', r1:'0x00000000', r2:'0x00000000', r3:'0x00000000', 
+            r4:'0xAAAA0001', r5:'0x00000064', r6:'0x00000000', r7:'0x00000000',
+            r8:'0x00000000', r9:'0x00000000', r10:'0x00000000', r11:'0xA5A5A5A5', 
+            r12:'0x00000000'
+        };
+
+        // Task B Data (Starting with B)
+        const PRE_B_CTX = {
+            r0:'101', r1:'0x00000000', r2:'0x00000000', r3:'0x00000000', 
+            r4:'0xBBBB0002', r5:'0x00002710', r6:'0x00000000', r7:'0x00000000',
+            r8:'0x00000000', r9:'0x00000000', r10:'0x00000000', r11:'0xB5B5B5B5',
+            r12:'0x00000000', lr:'Old_LR', pc: ADDR.TASKB, xpsr:'0x01000000'
+        };
+
+        // --- CODE LINES ---
+        const codeLines = [
+            { addr: '0x08001000', text: 'void TaskA(void* p) {' },
+            { addr: '0x08001004', text: '  while(1) {' },
+            { addr: ADDR.TASKA, text: '    countA++;', id: 'line-taska' },
+            { addr: '0x0800100C', text: '  }' },
+            { addr: '--------', text: '' },
+            { addr: '0x08002000', text: 'void TaskB(void* p) {' },
+            { addr: '0x08002004', text: '  while(1) {' },
+            { addr: ADDR.TASKB, text: '    countB++;', id: 'line-taskb' },
+            { addr: '0x0800200C', text: '  }' },
+            { addr: '--------', text: '' },
+            { addr: ADDR.ISR_ENTRY, text: 'PendSV_Handler() {', id: 'line-isr-1' },
+            { addr: '0x08003004', text: '  // HW Auto-Push', id: 'line-isr-2' },
+            { addr: ADDR.ISR_SAVE, text: '  SaveContext(R4-R11);', id: 'line-isr-3' },
+            { addr: ADDR.ISR_SWITCH, text: '  SelectNextTask();', id: 'line-isr-4' },
+            { addr: ADDR.ISR_RESTORE, text: '  RestoreContext(R4-R11);', id: 'line-isr-5' },
+            { addr: ADDR.ISR_EXIT, text: '  // ISR Return (BX LR)', id: 'line-isr-6' },
+            { addr: '0x08003018', text: '}' }
+        ];
+
+        // --- SEQUENCE ---
+        const sequence = [
+            {   // 0: RUN A
+                line: 'line-taska',
+                mode: 'THREAD',
+                taskBadge: {t: 'Task A', c: 'bg-green-100 text-green-700 border-green-200'},
+                narrative: `<strong>1. Task A Execution:</strong><br>
+                            CPU is executing Task A using Registers <code>0xA...</code><br>
+                            Notice <strong>R4 = 0xAAAA0001</strong> (Task ID) and <strong>R11 = 0xA5A5A5A5</strong> (Frame Ptr).<br>
+                            These values are currently "Live" in the CPU Core.`,
+                regs: { ...CTX_A, pc:ADDR.TASKA, sp:'0x20001000', lr:'0xFFFFFFFF', xpsr:'0x01000000' }, 
+                highlight: [],
+                stackA: { sp:'0x20001000', items:[] },
+                stackB: { sp:'0x20001FC0', items: getFullFrame(PRE_B_CTX, STACK_B_TOP) }
+            },
+            {   // 1: ISR ENTRY (HW PUSH)
+                line: 'line-isr-2',
+                mode: 'HANDLER',
+                taskBadge: {t: 'PendSV (Handler)', c: 'bg-red-100 text-red-700 border-red-200'},
+                narrative: `<strong>2. Interrupt Entry (Hardware Push):</strong><br>
+                            Interrupt fires! The Hardware automatically pushes the Orange registers to Stack A.<br>
+                            <strong>Why xPSR?</strong> Saves the Status Flags and Thumb Bit (<code>0x01000000</code>).<br>
+                            <strong>Why LR?</strong> Sets to <code>0xFFFFFFFD</code> (EXC_RETURN) to tell CPU "Return to Thread Mode using PSP stack".`,
+                regs: { ...CTX_A, pc:ADDR.ISR_ENTRY, sp:'0x20000FE0', lr:'0xFFFFFFFD', xpsr:'0x01000000' },
+                highlight: ['r0','r1','r2','r3','r12','lr','pc','xpsr'],
+                stackA: { sp:'0x20000FE0', items: getHWFrame({ ...CTX_A, pc:ADDR.TASKA }, STACK_A_TOP) },
+                stackB: { sp:'0x20001FC0', items: getFullFrame(PRE_B_CTX, STACK_B_TOP) }
+            },
+            {   // 2: SW SAVE
+                line: 'line-isr-3',
+                mode: 'HANDLER',
+                taskBadge: {t: 'PendSV (Handler)', c: 'bg-red-100 text-red-700 border-red-200'},
+                narrative: `<strong>3. Software Context Save:</strong><br>
+                            FreeRTOS executes <code>STMDB SP!, {R4-R11}</code>.<br>
+                            Look at Stack A! It now holds <strong>R4 (0xAAAA0001)</strong> and <strong>R5 (0x00000064)</strong>.<br>
+                            Task A's state is completely preserved in RAM.`,
+                regs: { ...CTX_A, pc:ADDR.ISR_SAVE, sp:'0x20000FC0', lr:'0xFFFFFFFD' },
+                highlight: ['r4','r5','r6','r7','r8','r9','r10','r11'],
+                stackA: { sp:'0x20000FC0', items: getFullFrame({ ...CTX_A, pc:ADDR.TASKA }, STACK_A_TOP) },
+                stackB: { sp:'0x20001FC0', items: getFullFrame(PRE_B_CTX, STACK_B_TOP) }
+            },
+            {   // 3: SWITCH
+                line: 'line-isr-4',
+                mode: 'HANDLER',
+                taskBadge: {t: 'Kernel (Switch)', c: 'bg-orange-100 text-orange-700 border-orange-200'},
+                narrative: `<strong>4. Context Switch:</strong><br>
+                            The Kernel selects <strong>Task B</strong>.<br>
+                            It updates the <strong>SP Register</strong> to point to Task B's stack (<code>0x20001FC0</code>).<br>
+                            Note: The CPU registers still hold Task A's junk values until the next step.`,
+                regs: { ...CTX_A, pc:ADDR.ISR_SWITCH, sp:'0x20001FC0', lr:'0xFFFFFFFD' },
+                highlight: ['sp'],
+                stackA: { sp:'none', items: getFullFrame({ ...CTX_A, pc:ADDR.TASKA }, STACK_A_TOP) },
+                stackB: { sp:'0x20001FC0', items: getFullFrame(PRE_B_CTX, STACK_B_TOP) }
+            },
+            {   // 4: SW RESTORE
+                line: 'line-isr-5',
+                mode: 'HANDLER',
+                taskBadge: {t: 'PendSV (Handler)', c: 'bg-red-100 text-red-700 border-red-200'},
+                narrative: `<strong>5. Software Restore:</strong><br>
+                            <code>LDMIA SP!, {R4-R11}</code> loads Task B's values.<br>
+                            <strong>Watch the Blue Registers!</strong><br>
+                            R4 becomes <code>0xBBBB0002</code> (Task B ID).<br>
+                            R5 becomes <code>0x00002710</code> (Task B Counter).`,
+                regs: { ...PRE_B_CTX, pc:ADDR.ISR_RESTORE, sp:'0x20001FE0', lr:'0xFFFFFFFD', r0:CTX_A.r0 }, 
+                highlight: ['r4','r5','r6','r7','r8','r9','r10','r11'],
+                stackA: { sp:'none', items: getFullFrame({ ...CTX_A, pc:ADDR.TASKA }, STACK_A_TOP) },
+                stackB: { sp:'0x20001FE0', items: getHWFrame(PRE_B_CTX, STACK_B_TOP) }
+            },
+            {   // 5: RETURN (RESUME B)
+                line: 'line-taskb', 
+                mode: 'THREAD',
+                taskBadge: {t: 'Task B', c: 'bg-blue-100 text-blue-700 border-blue-200'},
+                narrative: `<strong>6. Exception Return (Resume Task B):</strong><br>
+                            <code>BX LR</code> triggers hardware unstacking using PSP.<br>
+                            CPU Pops R0-R3, PC, xPSR from Stack B.<br>
+                            <strong>PC</strong> is restored to <code>0x08002008</code>.<br>
+                            Execution resumes in Task B's loop! Stack B is now empty (context in CPU).`,
+                regs: { ...PRE_B_CTX, pc:ADDR.TASKB, sp:'0x20002000', lr:'Old_LR' },
+                highlight: ['r0','r1','r2','r3','r12','lr','pc','xpsr'],
+                stackA: { sp:'none', items: getFullFrame({ ...CTX_A, pc:ADDR.TASKA }, STACK_A_TOP) },
+                stackB: { sp:'0x20002000', items: [] }
+            }
+        ];
+
+        // --- HELPERS ---
+        function getHWFrame(vals, top) {
+            return [
+                {a: top-4, v:vals.xpsr||'0x01000000', t:'hw'}, {a: top-8, v:vals.pc, t:'hw'}, {a: top-12, v:vals.lr||'LR', t:'hw'}, {a: top-16, v:vals.r12||'0', t:'hw'},
+                {a: top-20, v:vals.r3||'0', t:'hw'}, {a: top-24, v:vals.r2||'0', t:'hw'}, {a: top-28, v:vals.r1||'0', t:'hw'}, {a: top-32, v:vals.r0||'0', t:'hw'}
+            ];
+        }
+        function getFullFrame(vals, top) {
+            const hw = getHWFrame(vals, top);
+            const sw = [
+                {a: top-36, v:vals.r11||'0', t:'sw'}, {a: top-40, v:vals.r10||'0', t:'sw'}, {a: top-44, v:vals.r9||'0', t:'sw'}, {a: top-48, v:vals.r8||'0', t:'sw'},
+                {a: top-52, v:vals.r7||'0', t:'sw'}, {a: top-56, v:vals.r6||'0', t:'sw'}, {a: top-60, v:vals.r5||'0', t:'sw'}, {a: top-64, v:vals.r4||'0', t:'sw'}
+            ];
+            return [...hw, ...sw];
+        }
+
+        // --- APP STATE ---
+        let currStep = 0;
+        let zoomLevel = 12;
+        let rowHeight = 22;
+
+        function init() {
+            document.getElementById('code-container').innerHTML = codeLines.map(l => `
+                <div class="code-row custom-text-size" id="${l.id||''}">
+                    <div class="addr-col">${l.addr}</div>
+                    <div class="src-col">${l.text}</div>
+                </div>
+            `).join('');
+            
+            setupResizer();
+            setupSettings();
+            renderStep(0);
+        }
+
+        function setupResizer() {
+            const handle = document.getElementById('drag-handle');
+            const rightPanel = document.getElementById('stack-panel');
+            let isDragging = false;
+
+            handle.addEventListener('mousedown', (e) => { isDragging = true; handle.classList.add('dragging'); document.body.style.cursor = 'col-resize'; });
+            document.addEventListener('mousemove', (e) => {
+                if(!isDragging) return;
+                const newWidth = document.body.clientWidth - e.clientX;
+                if(newWidth > 200 && newWidth < 600) rightPanel.style.width = newWidth + 'px';
+            });
+            document.addEventListener('mouseup', () => { isDragging = false; handle.classList.remove('dragging'); document.body.style.cursor = 'default'; });
+        }
+
+        function setupSettings() {
+            const zInput = document.getElementById('zoom-range');
+            const dInput = document.getElementById('density-range');
+            
+            const updateStyles = () => {
+                zoomLevel = zInput.value;
+                rowHeight = dInput.value;
+                document.querySelectorAll('.custom-text-size').forEach(el => el.style.fontSize = zoomLevel + 'px');
+                document.querySelectorAll('.mem-row').forEach(el => {
+                    el.style.height = rowHeight + 'px';
+                    el.style.fontSize = (zoomLevel - 1) + 'px';
+                });
+                document.querySelectorAll('.reg-card').forEach(el => el.style.fontSize = zoomLevel + 'px');
+                document.querySelectorAll('.code-row').forEach(el => el.style.fontSize = zoomLevel + 'px');
+            };
+
+            zInput.addEventListener('input', updateStyles);
+            dInput.addEventListener('input', updateStyles);
+            updateStyles(); 
+        }
+
+        function renderStep(idx) {
+            const s = sequence[idx];
+            document.getElementById('narrative-text').innerHTML = s.narrative;
+            document.getElementById('cpu-mode').innerText = s.mode;
+            document.getElementById('cpu-mode').className = `text-[10px] px-2 py-0.5 rounded font-bold border ${s.mode === 'THREAD' ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`;
+            
+            // Update Task Badge
+            const badge = document.getElementById('current-task-badge');
+            if(s.taskBadge) {
+                badge.innerText = s.taskBadge.t;
+                badge.className = `text-[10px] px-2 py-0.5 rounded font-bold border ${s.taskBadge.c}`;
+            }
+
+            document.querySelectorAll('.code-row').forEach(el => el.classList.remove('active-row', 'isr-row'));
+            const line = document.getElementById(s.line);
+            if(line) {
+                line.classList.add(s.line.includes('isr') ? 'isr-row' : 'active-row');
+                line.scrollIntoView({block:'center', behavior:'smooth'});
+            }
+
+            Object.keys(s.regs).forEach(k => {
+                const el = document.getElementById(`reg-${k}`);
+                if(el) {
+                    const valEl = el.querySelector('.reg-hex');
+                    if(valEl.innerText !== s.regs[k]) {
+                        valEl.innerText = s.regs[k];
+                        el.classList.add('reg-changed');
+                        setTimeout(()=>el.classList.remove('reg-changed'), 300);
+                    }
+                    el.classList.remove('reg-hw', 'reg-sw');
+                    if(s.highlight.includes(k)) {
+                        if(['r0','r1','r2','r3','r12','lr','pc','xpsr'].includes(k)) el.classList.add('reg-hw');
+                        else el.classList.add('reg-sw');
+                    }
+                }
+            });
+
+            renderMemoryMap('stack-a', STACK_A_TOP, s.stackA.items, s.stackA.sp);
+            renderMemoryMap('stack-b', STACK_B_TOP, s.stackB.items, s.stackB.sp);
+
+            // Update Button State
+            const btn = document.getElementById('btn-next');
+            if (idx === sequence.length - 1) {
+                btn.innerHTML = 'RESTART <i class="ph ph-arrow-counter-clockwise"></i>';
+                btn.classList.replace('bg-blue-700', 'bg-slate-700');
+                btn.classList.replace('hover:bg-blue-800', 'hover:bg-slate-600');
+            } else {
+                btn.innerHTML = 'NEXT STEP <i class="ph ph-arrow-right"></i>';
+                btn.classList.replace('bg-slate-700', 'bg-blue-700');
+                btn.classList.replace('hover:bg-slate-600', 'hover:bg-blue-800');
+            }
+        }
+
+        function renderMemoryMap(elemId, topAddr, items, sp) {
+            const container = document.getElementById(elemId);
+            let html = '';
+            for(let i=0; i<20; i++) {
+                const addr = topAddr - (i * 4);
+                const hexAddr = '0x' + addr.toString(16).toUpperCase();
+                const item = items.find(it => '0x'+it.a.toString(16).toUpperCase() === hexAddr);
+                
+                let valClass = 'mem-val';
+                let valText = '--';
+                if(item) {
+                    valText = item.v;
+                    valClass += (item.t === 'hw' ? ' bg-hw' : ' bg-sw mem-active');
+                }
+                const isSP = (hexAddr === sp);
+                html += `
+                    <div class="mem-row ${isSP ? 'sp-indicator' : ''}" style="height:${rowHeight}px; font-size:${zoomLevel-1}px;">
+                        <div class="mem-loc">${hexAddr}</div>
+                        <div class="${valClass}">${valText}</div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function nextStep() {
+            currStep++;
+            if(currStep >= sequence.length) currStep = 0;
+            renderStep(currStep);
+        }
+
+        function resetSim() {
+            currStep = 0;
+            renderStep(0);
+        }
+
+        init();
+    </script>
+</body>
+</html>

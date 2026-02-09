@@ -1,0 +1,17 @@
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:136:9:BSP_GetVersion	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:145:16:BSP_GetBoardName	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:154:16:BSP_GetBoardID	4	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:172:9:BSP_LED_Init	48	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:212:9:BSP_LED_DeInit	40	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:234:9:BSP_LED_On	16	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:250:9:BSP_LED_Off	16	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:266:9:BSP_LED_Toggle	16	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:281:9:BSP_LED_GetState	24	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:312:9:BSP_PB_Init	88	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:387:9:BSP_PB_DeInit	40	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:407:9:BSP_PB_GetState	24	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:425:13:BSP_PB_Callback	16	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:443:6:BSP_PB_IRQHandler	16	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:673:13:B1_EXTI_Callback	8	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:682:13:B2_EXTI_Callback	8	static
+/media/abdallah-shehawey/Local-Disk2/System_Programming_under_Linux/Phase_2/01_Code/RTOS/STM32CubeWBA/Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c:691:13:B3_EXTI_Callback	8	static

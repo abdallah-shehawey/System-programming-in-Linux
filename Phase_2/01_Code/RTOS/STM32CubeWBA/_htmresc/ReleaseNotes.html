@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<title>_htmresc\ReleaseNotes.html</title>
+</head>
+
+<body style="font-size: 10pt; font-family: Verdana;">
+
+<h3 style="color: blue; text-decoration: underline;">STM32CubeWBA Firmware Package V1.8.0 / 29-October-2025</h3>
+
+<div style="margin-left: 18pt;">
+<p>
+<b><u>Main Changes</u></b>
+</p>
+
+<p>
+<b>Official Release of STM32CubeWBA Firmware package supporting STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx, STM32WBA55xx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx devices</b>
+</p>
+<p>
+- SLA0044 Legal terms updated to latest revision (Rev 6 / October 2025)
+</p>
+<p>
+- SLA0048 Legal terms updated to latest revision (Rev 5 / October 2025)
+</p>
+<p>
+<b>Security</b>
+</p>
+<p>
+- Migrated middleware to MbedTLS version 3.6.4 LTS and to mcuboot version 1.7.2.38
+</p>
+<p>
+- Enabled STM32CubeIDE users on Windows OS to run RoT .bat scripts
+</p>
+<p>
+- Enforced Python 3 usage in all .bat scripts for ROT Apps and Provisioning (Removed all usage of .dll or .exe files in ROT projects)
+</p>
+<p>
+- Update Full Secure project setup (OEMiROT_Appli)
+</p>
+<p>
+- Python and some python packages are required to execute ROT_AppliConfig utilities on Windows. Refer to Utilities/PC_Software/ROT_AppliConfig/README.md for more details.
+</p>
+<p>
+<b>Connectivity</b>
+</p>
+<p>
+- 802.15.4 and Concurrent mode applications: reducing number of applications to simplify the offer.
+</p>
+<p>
+- BLE:
+</p>
+<p>
+- Support of BLE 6.0
+</p>
+<p>
+- Man-In-The-Middle (MITM) management is enhanced in the BLE stack to provide more flexibility and better interoperability.
+</p>
+<p>
+- Add BLE Host Stack events FIFO buffer mechanism
+</p>
+<p>
+- BLE Audio :
+</p>
+<p>
+- Increase the max number of supported BIS from 2 to 6
+</p>
+<p>
+- Add new data path ID to Codec Manager for raw data
+</p>
+<p>
+- Zigbee:
+</p>
+<p>
+- The Zigbee Direct stack precertification has been completed (based on ZUTH)
+</p>
+<p>
+- Thread:
+</p>
+<p>
+- Upgrade of OT stack to SHA-1: cbb04be4a64910a8ad160ae1aae2e34fc31031b9
+</p>
+<p>
+<b>Drivers</b>
+</p>
+<p>
+- CMSIS Device Drivers supporting TM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA55xx, STM32WBA5Mxx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx  devices
+</p>
+<p>
+- HAL/LL Drivers available for all peripherals
+</p>
+<p>
+- HAL: ADC, COMP, CORTEX, CRC, CRYP, DMA, EXTI, FLASH, GPIO, GTZC, HASH, HSEM, HCD, I2C, ICACHE, IRDA, IWDG, LPTIM, PKA, PWR, PCD, RAMCFG, RCC, RNG, RTC, SAI, SMARTCARD, SMBUS, SPI, TIM, TSC, UART, USB, USART, WWDG
+</p>
+<p>
+- LL : ADC, COMP, CRC, DMA, EXTI, GPIO, I2C, ICACHE, LPTIM, LPUART, PKA, PWR, RCC, RNG, RTC, SPI, TIM, USART, UTILS
+</p>
+<p>
+- Update HAL/LL drivers to include latest corrections and to support of STM32WBA6xx devices
+</p>
+<p>
+- BSP Drivers : Update STM32WBAxx_Nucleo, STM32WBA65I-DK1 and STM32WBA55G-DK1 BSP drivers to include latest corrections.
+</p>
+<p>
+
+<b>Projects</b>
+</p>
+<p>
+<b>- B-WBA5M-WPAN</b>
+</p>
+<p>
+- Update applications demonstrating BLE, Thread and Zigbee capabilities
+</p>
+<p>
+<b>- NUCLEO-WBA55CG</b>
+</p>
+<p>
+- Update applications demonstrating BLE, Thread and Zigbee capabilities
+</p>
+<p>
+<b>- STM32WBA55G-DK1</b>
+</p>
+<p>
+- Update applications demonstrating BLE, Thread and Zigbee capabilities
+</p>
+<p>
+<b>- NUCLEO-WBA65RI</b>
+</p>
+<p>
+- Update applications demonstrating BLE, Thread and Zigbee capabilities
+</p>
+<p>
+- Following new applications are now supported :
+</p>
+<p>
+- BLE :
+</p>
+<p>
+- BLE_TransparentMode_Ux_CDC
+</p>
+<p>
+- BLE_Thread:
+</p>
+<p>
+- BLE_HeartRate_Thread_SED
+</p>
+<p>
+- BLE_HeartRate_Thread_SED_FreeRTOS
+</p>
+<p>
+- Thread :
+</p>
+<p>
+- Thread_Cli_Cmd_FTD
+</p>
+<p>
+- Thread_Cli_Cmd_MTD
+</p>
+<p>
+<b>- STM32WBA65I-DK1</b>
+</p>
+<p>
+- Update applications demonstrating BLE, Thread and Zigbee capabilities
+</p>
+<p>
+- Following new applications are now supported :
+</p>
+<p>
+- BLE Thread :
+</p>
+<p>
+- BLE_HeartRate_Thread_SED_FreeRTOS
+</p>
+<p>
+<b>- B-WBA6M-WPAN</b>
+</p>
+<p>
+- Following new applications are now supported :
+</p>
+<p>
+- BLE :
+</p>
+<p>
+- BLE_Sensor
+</p>
+<p>
+- Zigbee :
+</p>
+<p>
+- Zigbee_OnOff_Client_Router
+</p>
+<p>
+- Zigbee_OnOff_Server_Coord
+</p>
+</div>
+</body>
+</html>

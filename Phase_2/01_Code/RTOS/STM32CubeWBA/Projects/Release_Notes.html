@@ -1,0 +1,4173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for Projects of STM32CubeWBA Firmware Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for">Release Notes for</h1>
+<h1 id="projects-of-stm32cubewba-firmware-package"><mark>Projects of STM32CubeWBA Firmware Package</mark></h1>
+<p>Copyright © 2022 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The projects are a set of applicative tasks that aim to explain and provide use cases of the different products features based on the products hardware (Boards, STM32 Core(s) features, interconnections and peripherals) and built around the different firmware components. They can be directly used or adapted by the STM32CubeWBA Firmware Package users. They provide basic functionalities, show main features or demonstrate performance. They are provided with preconfigured projects for the main supported toolchains.</p>
+<p>In the STM32CubeWBA Firmware Package, the projects are organized in a sequential scheme based on the following levels:</p>
+<ul>
+<li>Boards: Hardware platform (nucleo and discovery boards)</li>
+<li>Project Category:
+<ul>
+<li>Applications</li>
+<li>Examples</li>
+<li>Examples_LL</li>
+<li>Examples_MIX</li>
+<li>Templates</li>
+<li>Templates_LL</li>
+</ul></li>
+</ul>
+<p>The exhaustive list of projects is provided in this table: <a href="STM32CubeProjectsList.html">STM32CubeProjectsList</a>.</p>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section15" checked aria-hidden="true"> <label for="collapse-section15" aria-hidden="true"><strong>V1.8.0 / 29-October-2025</strong></label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-stm32wba5mxx-stm32wba55xx-stm32wba62xx-stm32wba63xx-stm32wba64xx-and-stm32wba65xx-devices">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong>, <strong>STM32WBA5Mxx</strong>, <strong>STM32WBA55xx</strong>, <strong>STM32WBA62xx</strong>, <strong>STM32WBA63xx</strong>, <strong>STM32WBA64xx</strong> and <strong>STM32WBA65xx</strong> devices</h3>
+<h2 id="contents">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA6M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA6M-WPAN\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA6M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA6M-WPAN\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA6M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA6M-WPAN\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Provisioning scripts <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects32WBA65I-DK1_Provisioning</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="all-boards">All Boards</h2>
+<ul>
+<li>802_15_4 and Concurrent mode applications
+<ul>
+<li>To streamline and rationalize our application offering, several projects have been removed from the package.</li>
+</ul></li>
+<li>BLE:
+<ul>
+<li>Adapt applications to BLE Host stack updates</li>
+<li>Applications adapted with appropriated BLE libraries (Peripheral only, Link Layer only for instance)</li>
+<li>Adapt applications to use new version of Low Power Manager</li>
+<li>Improve ThreadX and FreeRTOS standby low power integration</li>
+<li>Buttons are now managed mainly by Wake Up pins feature</li>
+<li>BLE_p2pServer_Ext app. BLE_p2pClient_Ext updated to perform a long write using aci_gatt_write_without_resp_ext new command</li>
+<li>Enhance Beacons applications configuration, align BLE_BeaconHCI and BLE_Beacon</li>
+<li>aci_gatt_confirm_indication command implemented in all GATT server applications, sent when an application receives the event aci_gatt_indication_event</li>
+<li>BLE_p2pRouter fixed in some disconnect situations</li>
+<li>BLE_TransparentMode now supports 8 links</li>
+<li>Adapt BLE apps to fact that fixed pin is now a deprecated security feature</li>
+<li>Fixed pin security feature is now deprecated, applications manage this change</li>
+</ul></li>
+<li>BLE Audio:
+<ul>
+<li>Native support of standby mode</li>
+<li>ID 216339 : reduce BSP Audio initialization time on STM32WBA65I-DK1</li>
+<li>Support of ACI GATT Extended events</li>
+<li>ID 216915 : Change default controller delay value</li>
+<li>Allow scan delegator behavior when connected as unicast device</li>
+</ul></li>
+<li>Thread :
+<ul>
+<li>Enhance the configuration of OpenThread applications using CubeMX. Through CubeMX, if requested you can now select:
+<ul>
+<li>The Thread application type: Full Thread Device, Minimal Thread Device, or Thread Co-Processor</li>
+<li>The Thread network configuration: Panid, Channel, Network key</li>
+<li>The support for the command line interface</li>
+</ul></li>
+</ul></li>
+<li>Zigbee:
+<ul>
+<li>ZigbeeDirect wiki update. Simplification of the application by removing the support of the coordinator mode on the ZDD.</li>
+<li>Low power enhancement on Zigbee Sleepy devices using specific RAM retention configuration</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="b-wba5m-wpan">B-WBA5M-WPAN</h2>
+<ul>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-dk1">NUCLEO-WBA55CG-DK1</h2>
+<ul>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba65ri">NUCLEO-WBA65RI</h2>
+<ul>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE :
+<ul>
+<li>BLE_TransparentMode_Ux_CDC</li>
+</ul></li>
+<li>BLE_Thread :
+<ul>
+<li>BLE_HeartRate_Thread_SED</li>
+<li>BLE_HeartRate_Thread_SED_FreeRTOS</li>
+</ul></li>
+<li>Thread :
+<ul>
+<li>Thread_Cli_Cmd_FTD</li>
+<li>Thread_Cli_Cmd_MTD</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba65i-dk1">STM32WBA65I-DK1</h2>
+<ul>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE_Thread :
+<ul>
+<li>BLE_HeartRate_Thread_SED_FreeRTOS</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="b-wba6m-wpan">B-WBA6M-WPAN</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE :
+<ul>
+<li>BLE_Sensor</li>
+</ul></li>
+<li>Zigbee :
+<ul>
+<li>Zigbee_OnOff_Client_Router</li>
+<li>Zigbee_OnOff_Server_Coord</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.60.3</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA5xx_V1.4.2.zip">Patch EWARM WBA5x</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA6xx_V1.0.1.zip">Patch EWARM WBA6x</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.2.1.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32CubeIDE V2.0.0</td>
+<td>V2.0.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx, STM32WBA55xx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx</li>
+<li>B-WBA5M-WPAN, B-WBA6M-WPAN, NUCLEO-WBA55CG, STM32WBA55G-DK1, NUCLEO-WBA65RI and STM32WBA65I-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>ID 204810 : IAR V9.60.3 limitation “Connect during reset” is not supported with MB1801-NoUSB-D01 / D02 version (Nucleo WBA5).
+<ul>
+<li>Workaround: close the SB29 and SB30 on the back of the MB1801-NoUSB-D01 / D02.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>In the Tx_FreeRTOS_Wrapper application a warning is raised on the tx_freertos.c file but does not affect the functionnality of the example</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>B-WBA6M-WPAN
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee_OnOff_Client_Router (no MDK-ARM)</li>
+<li>Zigbee_OnOff_Server_Coord (no MDK-ARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA65RI
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE_HeartRate_Thread_SED_FreeRTOS (no STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>STM32WBA65I-DK1
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE_HeartRate_Thread_FreeRTOS (no STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.16.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.16.0.<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>This release contains many other fixes only the most important ones are detailed in the release notes.</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section14" aria-hidden="true"> <label for="collapse-section14" aria-hidden="true"><strong>V1.7.0 / 04-June-2025</strong></label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-stm32wba5mxx-stm32wba55xx-stm32wba62xx-stm32wba63xx-stm32wba64xx-and-stm32wba65xx-devices-1">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong>, <strong>STM32WBA5Mxx</strong>, <strong>STM32WBA55xx</strong>, <strong>STM32WBA62xx</strong>, <strong>STM32WBA63xx</strong>, <strong>STM32WBA64xx</strong> and <strong>STM32WBA65xx</strong> devices</h3>
+<h2 id="contents-1">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-1">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Provisioning scripts <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects32WBA65I-DK1_Provisioning</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="all-boards-1">All Boards</h2>
+<ul>
+<li>Low Power improvements:
+<ul>
+<li>Optimized RNG initialization, performed only when pool of random numbers reaches low watermark</li>
+<li>Standby wakeup time automatically profiled to reduce it as much as possible</li>
+</ul></li>
+<li>BLE:
+<ul>
+<li>Use static unique random address is done in BLE_HealthThermometer application</li>
+<li>nvm_emul.c module is now integrated in the BLE stack</li>
+<li>External PA option is now available for all BLE applications</li>
+</ul></li>
+<li>BLE Audio:
+<ul>
+<li>Replace CAP_GetCurrentLinkedProfiles() function by CAP_GetCurrentLinkedGAFProfiles() function (related to ID 205576 in WPAN BLE Audio</li>
+<li>Integration of new NVM management for BLE Host, BLE Audio Framework and Audio Uses cases related to ID 204200, ID 205573, ID 204215, and ID 204206 in WPAN BLE Audio</li>
+<li>ID 206098 : ISO_PLL_EXEC_TIME is adapted with the new ll_intf_config_schdling_time(). Update of the LINKLAYER_PLAT_SCHLDR_TIMING_UPDATE_NOT() function in the linklayer_plat.c</li>
+<li>ID 208390 : TMAP/HAP/GMAP Projects : integration of the Connection Oriented Channel and EATT features support.</li>
+<li>ID 208386 : Integration of the EATT Feature in the BLE Audio Use Case Profiles TMAP, HAP and GMAP.</li>
+<li>Update app_bsp.c/h files. Replace CFG_TASK_BSP_JOY_TIMER by CFG_TASK_BSP_JOY_SAMPLE and replace CFG_JOYSTICK_TYPE_BUTTON definition in app_conf.h by CFG_JOYSTICK_USE_TYPE and CFG_JOYSTICK_MODE definition</li>
+<li>TMAP Peripheral project : Set MAX_BASS_METADATA_SIZE to 50 to fix Smartphone Auracast source not synchronizable</li>
+<li>HAP projects : Remove ATT_ERR_CLIENT_CHAR_CONF_DESC_IMPROPERLY_CONFIGURED error code returns in case of Control Point Descriptors not configured as INDICATION for operation SET_ACTIVE_PRESET and SET_ACTIVE_PRESET_LOCAL_SYNC</li>
+<li>ID 109849 : fix incorrect de-init of SAI leading to channel inversion</li>
+<li>TMAP/HAP/GMAP Peripheral Projects : Set ENABLE_AUDIO_HIGH_RELIABILITY at 1 to accept Audio High Reliability during Audio setup process</li>
+</ul></li>
+<li>Thread:
+<ul>
+<li>Minor adjustments to ensure the Thread applications are compatible with the updated OpenThread stack (v1.4)
+<ul>
+<li>OT_NETIF_THREAD renamed into OT_NETIF_THREAD_HOST</li>
+</ul></li>
+</ul></li>
+<li>Zigbee:
+<ul>
+<li>Enhancements to the ZigbeeDirect Ecosystem:
+<ul>
+<li>Integration of Level Control Cluster: The ZigbeeDirect_OnOff application now includes the level control cluster, enhancing functionality.</li>
+<li>Support for Multiple Zigbee Roles: The ZigbeeDirect Device (ZDD) can now function as either a coordinator or a router. This is enabled through a define named ZDD_IS_ZC.</li>
+</ul></li>
+</ul></li>
+<li>BLE-Thread concurrent mode:
+<ul>
+<li>Adjust the priority levels of Radio and RCC interrupts in FreeRTOS-based application</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-1">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>Zigbee:
+<ul>
+<li>Zigbee_PressMeas_Server_Router_Persist</li>
+<li>Zigbee_PressMeas_Client_Coord_Persist</li>
+</ul></li>
+<li>Thread:
+<ul>
+<li>Thread_Commissioning</li>
+<li>Thread_Coap_Generic_Persist (replacing Thread_Coap_Generic_NVM)</li>
+</ul></li>
+</ul></li>
+<li>Following applications are now removed:
+<ul>
+<li>Zigbee:
+<ul>
+<li>Zigbee_OnOff_Nvm_Server_Coord</li>
+<li>Zigbee_OnOff_Nvm_Client_Router</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="b-wba5m-wpan-1">B-WBA5M-WPAN</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>Zigbee:
+<ul>
+<li>Zigbee_OnOff_Server_Coord</li>
+<li>Zigbee_OnOff_Client_Router</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba65ri-1">NUCLEO-WBA65RI</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>Thread:
+<ul>
+<li>Thread_Commissioning</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba65i-dk1-1">STM32WBA65I-DK1</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>Thread:
+<ul>
+<li>Thread_Cli_Cmd</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.60.3</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA5xx_V1.4.2.zip">Patch EWARM WBA5x</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA6xx_V1.0.1.zip">Patch EWARM WBA6x</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.2.1.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32CubeIDE V1.18.0 (GCC13)</td>
+<td>V1.18.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-1">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx, STM32WBA55xx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx</li>
+<li>B-WBA5M-WPAN, NUCLEO-WBA55CG, STM32WBA55G-DK1, NUCLEO-WBA65RI and STM32WBA65I-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>ID 204810 : IAR V9.60.3 limitation “Connect during reset” is not supported with MB1801-NoUSB-D01 / D02 version (Nucleo WBA5).
+<ul>
+<li>Workaround: close the SB29 and SB30 on the back of the MB1801-NoUSB-D01 / D02.</li>
+</ul></li>
+<li>ID 209635 : Issue with low power mode for BLE Thread Sleepy End Device Applications. As a consequence corresponding applications are removed from the package.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee_OnOff_Client_Router_Ota (no MDK-ARM)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+</ul></li>
+<li>NUCLEO-WBA65RI
+<ul>
+<li>All Applications are provided with EWARM and STM32CubeIDE support except:
+<ul>
+<li>Thread_SED_Coap_Multicast (no STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.15.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.15.0.<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="notes-1">Notes</h2>
+<ul>
+<li>This release contains many other fixes only the most important ones are detailed in the release notes.</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section13" aria-hidden="true"> <label for="collapse-section13" aria-hidden="true"><strong>V1.6.1 / 11-April-2025</strong></label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="patch-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-stm32wba5mxx-stm32wba55xx-stm32wba62xx-stm32wba63xx-stm32wba64xx-and-stm32wba65xx-devices">Patch Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong>, <strong>STM32WBA5Mxx</strong>, <strong>STM32WBA55xx</strong>, <strong>STM32WBA62xx</strong>, <strong>STM32WBA63xx</strong>, <strong>STM32WBA64xx</strong> and <strong>STM32WBA65xx</strong> devices</h3>
+<h2 id="contents-2">Contents</h2>
+<h3 id="patch-release-of-stm32cubewba-projects">Patch Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Provisioning scripts <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects32WBA65I-DK1_Provisioning</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="all-boards-2">All Boards</h2>
+<ul>
+<li>ID 206491: RTC SSR underflow is now managed in connectivity applications, HAL_RTCEx_SSRUIRQHandler is now called</li>
+<li>BLE :
+<ul>
+<li>Readme files updated</li>
+<li>Fix some Device Info characteristic values</li>
+<li>WBA6 BLE ThreadX application is now configured in standby mode by default</li>
+<li>ID 202920: Reference binaries updated</li>
+<li>ID 202315: Fix behavior of buttons in Heart Rate applications</li>
+<li>ID 204715: Fix PRE/POST_PROC macro implementation to run BLE HOST stack after an ACI function call</li>
+<li>ID 204715: Tune standby timings for BLE low power focused applications to reach better figures</li>
+</ul></li>
+<li>BLE Zigbee :
+<ul>
+<li>Major enhancement of the ZigBee Direct ecosystem :
+<ul>
+<li>ID 207156: The BLE services required for ZigbeeDirect (device information, commissioning, security, tunneling) are now fully integrated inside the ZDD Application (ZigbeeDirect_OnOff)
+<ul>
+<li>This update impacts the ZigbeeDirect stack (ZigBeeProR23_ZDD.a) and also the Zigbee Application ZigbeeDirect_OnOff provided on NUCLEO-WBA55CG and NUCLEO-WBA65RI boards.</li>
+</ul></li>
+<li>ID 207161: The demo has been improved:
+<ul>
+<li>The Zigbee Virtual Device is now able to control a full Zigbee network
+<ul>
+<li>A new Application has been added to demonstrate the above use case. Refer to the associated readme.txt for more details.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>BLE Thread :
+<ul>
+<li>Update the interrupt priority levels of all BLE_Thread freeRTOS applications</li>
+<li>Rework the BLE_HeartRate_Thread_SED_FreeRTOS application available on STM32WBA65I-DK1 to solve instabilities issues.</li>
+<li>These updates are included inside the following tickets:
+<ul>
+<li>ID 204233: [NUCLEO-WBA65][CONCURRENT][BLE+THREAD+FREERTOS] Thread stack stops randomly</li>
+<li>ID 202149: [NUCLEO-WBA65][CONCURRENT] Long term BLE_HeartRate_Thread_SED_FreeRTOS<br />
+</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="nucleo-wba55cg-2">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Following new application is now supported:
+<ul>
+<li>Zigbee :
+<ul>
+<li>ZigbeeDirect_OnOff_Server_Router_Identify</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba65ri-2">NUCLEO-WBA65RI</h2>
+<ul>
+<li>Following new application is now supported:
+<ul>
+<li>Zigbee :
+<ul>
+<li>ZigbeeDirect_OnOff_Server_Router_Identify</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba65i-dk1-2">STM32WBA65I-DK1</h2>
+<ul>
+<li>Removal of few restrictions :
+<ul>
+<li>ROT:
+<ul>
+<li>OEMuRoT update is supported</li>
+<li>OEMuRoT swap mode is functional</li>
+</ul></li>
+<li>Applications MbedTLS_HW_ALT and MbedTLS_SW, MDK-ARM is supported</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA5xx_V1.4.1.zip">Patch EWARM WBA5x</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA6xx_V1.0.0.zip">Patch EWARM WBA6x</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.5.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32CubeIDE V1.18.0 (GCC13)</td>
+<td>V1.18.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-2">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx, STM32WBA55xx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx</li>
+<li>B-WBA5M-WPAN, NUCLEO-WBA55CG, STM32WBA55G-DK1, NUCLEO-WBA65RI and STM32WBA65I-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Thread_Coap_Generic_NVM (no MDK-ARM)</li>
+<li>OpenBootloader (no EWARM)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+</ul></li>
+<li>B-WBA5M-WPAN
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee_OnOff_Client_Router (all IDEs)</li>
+<li>Zigbee_OnOff_Server_Coord (all IDEs)</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA65RI
+<ul>
+<li>All Applications are provided with EWARM and STM32CubeIDE support except:
+<ul>
+<li>Thread_OTA_Server (no STM32CubeIDE)</li>
+<li>Thread_OTA_Client (no STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-2">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.14.1
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.14.1.<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="notes-2">Notes</h2>
+<ul>
+<li>This release contains many other fixes only the most important ones are detailed in the release notes.</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section12" aria-hidden="true"> <label for="collapse-section12" aria-hidden="true"><strong>V1.6.0 / 05-February-2025</strong></label>
+<div>
+<h2 id="main-changes-3">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-stm32wba5mxx-stm32wba55xx-stm32wba62xx-stm32wba63xx-stm32wba64xx-and-stm32wba65xx-devices-2">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong>, <strong>STM32WBA5Mxx</strong>, <strong>STM32WBA55xx</strong>, <strong>STM32WBA62xx</strong>, <strong>STM32WBA63xx</strong>, <strong>STM32WBA64xx</strong> and <strong>STM32WBA65xx</strong> devices</h3>
+<h2 id="contents-3">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-2">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA65RI</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA65RI\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Templates <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Templates <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA65I-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA65I-DK1</td>
+<td style="text-align: left;">Provisioning scripts <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects32WBA65I-DK1_Provisioning</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="all-boards-3">All Boards</h2>
+<ul>
+<li>Radio sleep timer accuracy is now configurable</li>
+<li>It’s now possible to not use AMM module and rely on malloc and free</li>
+<li>Add an option to not use Flash Manager module</li>
+<li>Debug GPIO improvement<br />
+</li>
+<li>BLE Updates:
+<ul>
+<li>Project without low power enabled by default are now on HSE at 32 MHz as system clock</li>
+<li>Add BLE Basic Plus choice in stacks selection</li>
+</ul></li>
+<li>Zigbee Updates:
+<ul>
+<li>Project Zigbee_Messaging_Server_Router_R22-SE and Zigbee_Messaging_Client_Coord_R22-SE are provided without CBKE key. CBKE key need to be generated by customers previous to use those projects.<br />
+</li>
+<li>Project nucleo Zigbee_SED with LPM will need an external 3.3V to measure the standby mode and still be able to use Buttons (nucleo schematics are available for details).</li>
+</ul></li>
+</ul>
+<h2 id="b-wba5m-wpan-2">B-WBA5M-WPAN</h2>
+<ul>
+<li>Following new application is now supported:
+<ul>
+<li>BLE:
+<ul>
+<li>BLE_Sensor</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-3">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE :
+<ul>
+<li>BLE_HeartRateFreeRTOS</li>
+<li>BLE_p2pServerThreadX</li>
+</ul></li>
+<li>BLE_Zigbee:
+<ul>
+<li>ZigbeeDirect_OnOff</li>
+</ul></li>
+<li>Thread:
+<ul>
+<li>Thread_Coap_Generic_NVM</li>
+</ul></li>
+<li>Zigbee:
+<ul>
+<li>Zigbee_Messaging_Client_Coord_R22-SE</li>
+<li>Zigbee_Messaging_Server_Router_R22-SE</li>
+<li>Zigbee_OnOff_Client_Router_FreeRtos</li>
+<li>Zigbee_OnOff_Server_Coord_FreeRtos</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba55g-dk1">STM32WBA55G-DK1</h2>
+<ul>
+<li>Following new applications are now supported:
+<ul>
+<li>Zigbee:
+<ul>
+<li>Zigbee_OnOff_Client_Router_FreeRtos</li>
+<li>Zigbee_OnOff_Server_Coord_FreeRtos</li>
+<li>Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee_Thermostat_Server_Router</li>
+</ul></li>
+</ul></li>
+<li>BLE Audio updates:
+<ul>
+<li>TMAP Peripheral : Reduced PAC records in TMAP Peripheral from 15 to 5</li>
+<li>TMAP Peripheral : Add Scan Delegator Stream Menu</li>
+<li>TMAP Peripheral : Updated event mask to add Periodic Advertising Sync Transfer Received event.</li>
+<li>TMAP Central and HAP Central : call hci_le_set_phy() to set PHY preferences for the connection (2Mbits/s)</li>
+<li>TMAP Peripheral and HAP Peripheral :remove hci_le_set_phy() call</li>
+<li>TMAP Peripheral and HAP Peripheral : Add procedure to retry a CAP Linkup procedure in case of the first attempt has been completed without GAF service discovery.</li>
+<li>ID 200247 : Update audio timings (CODEC_RF_SETUP_US, ISO_PLL_DRIFT_TIME_EXTRA_GCC_DEBUG, ISO_PLL_EXEC_TIME_EXTRA_GCC_DEBUG) with specific values for CubeIDE DBG</li>
+<li>Added SAI flush on MX_AudioDeInit to avoid left/right channels inversion</li>
+<li>aci_gap_check_bonded_device() replaces aci_gap_resolve_private_addr() and aci_gap_is_device_bonded()</li>
+<li>RAM usage optimization : size in/out buffer based on CODEC_MAX_BAND and NUM_xxxCODER_CHANNEL</li>
+<li>RAM usage optimization : Stack Size is setting to 0x1000 and Heap Size is setting to 0x0000</li>
+<li>TMAP Peripheral and HAP Peripheral : Register only one Source ASE (APP_NUM_SRC_ASE) and limit to only one Channel per ASE (APP_MAX_CHANNEL_PER_SRC_ASE) and set CODEC_LC3_NUM_ENCODER_CHANNEL to 1 (microphone only).</li>
+<li>Add HCI_LE_CIS_ESTABLISHED_V2_SUBEVT_CODE event handling in SVCCTL_App_Notification() function in app_ble.c<br />
+</li>
+<li>PBP Source : Add device identifier to Broadcast Name<br />
+</li>
+<li>ID 196487 : Fix CIG allocation in BLE codec<br />
+</li>
+<li>Clean controller delay calculation</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba65ri-3">NUCLEO-WBA65RI</h2>
+<ul>
+<li>Following HAL examples have been added:
+<ul>
+<li>ADC/ADC_AnalogWatchdog, ADC_ContinuousConversion_TriggerSW_LowPower, ADC_MultiChannelSingleConversion</li>
+<li>CORTEX_ModePrivilege</li>
+<li>CRC_Example</li>
+<li>CRYP_AESModes, CRYP_GCM_GMAC_CMAC_Suspension</li>
+<li>DMA_FLASHToRAM</li>
+<li>FLASH_DualBoot, FLASH_EraseProgram</li>
+<li>GPIO_IOToggle</li>
+<li>HSEM_ProcessSync, HSEM_ReadLock</li>
+<li>I2C2C_TwoBoards_ComDMA, I2C2C_TwoBoards_ComIT</li>
+<li>PWR_STANDBY_RTC, PWR_STOP2</li>
+<li>RCC_ClockConfig</li>
+<li>SPI_FullDuplex_ComDMA_Master, SPI_FullDuplex_ComDMA_Slave, SPI_FullDuplex_ComIT_Master, SPI_FullDuplex_ComIT_Slave</li>
+<li>TIM_DMA, TIM_ExtTriggerSynchro, TIM_PWMOutput</li>
+<li>UART_HyperTerminal_IT, UART_LowPower_HyperTerminal_DMA, UART_Printf</li>
+</ul></li>
+<li>Following LL examples have been added:
+<ul>
+<li>CRC_CalculateAndCheck</li>
+<li>GPIO_InfiniteLedToggling_Init</li>
+<li>RCC_UseHSI_PLLasSystemClock</li>
+<li>UTILS_ConfigureSystemClock</li>
+</ul></li>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE:
+<ul>
+<li>BLE_ApplicationInstallManager</li>
+<li>BLE_Beacon</li>
+<li>BLE_BeaconHCI</li>
+<li>BLE_DataThroughput_Client</li>
+<li>BLE_DataThroughput_Server</li>
+<li>BLE_GenericHealth_ECG_ota</li>
+<li>BLE_HealthThermometer</li>
+<li>BLE_HeartRate</li>
+<li>BLE_HeartRateFreeRTOS</li>
+<li>BLE_HeartRateThreadX</li>
+<li>BLE_HeartRate_ota</li>
+<li>BLE_Power_Central</li>
+<li>BLE_Power_Peripheral</li>
+<li>BLE_SerialCom_Central</li>
+<li>BLE_SerialCom_Peripheral</li>
+<li>BLE_TransparentMode</li>
+<li>BLE_p2pClient</li>
+<li>BLE_p2pClient_Ext</li>
+<li>BLE_p2pRouter</li>
+<li>BLE_p2pServer</li>
+<li>BLE_p2pServerThreadX</li>
+<li>BLE_p2pServer_Ext</li>
+<li>BLE_p2pServer_Simplest</li>
+<li>BLE_p2pServer_TZ</li>
+<li>BLE_p2pServer_ota</li>
+</ul></li>
+<li>BLE_Thread:
+<ul>
+<li>BLE_HeartRate_Thread</li>
+<li>BLE_HeartRate_Thread_FreeRTOS</li>
+<li>BLE_HeartRate_Thread_SED</li>
+<li>BLE_HeartRate_Thread_SED_FreeRTOS</li>
+</ul></li>
+<li>BLE_Zigbee:
+<ul>
+<li>BLE_HeartRate_Zigbee</li>
+<li>ZigbeeDirect_OnOff</li>
+</ul></li>
+<li>Mac_802_15_4:
+<ul>
+<li>Mac_802_15_4_Coordinator</li>
+<li>Mac_802_15_4_LPM_Periodic_Tx</li>
+<li>Mac_802_15_4_Node</li>
+<li>Mac_802_15_4_Node_Ant_Div</li>
+</ul></li>
+<li>Phy_802_15_4:
+<ul>
+<li>Phy_Cli</li>
+</ul></li>
+<li>Thread:
+<ul>
+<li>Thread_Cli_Cmd</li>
+<li>Thread_Coap_Generic</li>
+<li>Thread_Coap_Generic_FreeRTOS</li>
+<li>Thread_Coap_Generic_Persist</li>
+<li>Thread_Coap_Generic_ThreadX</li>
+<li>Thread_Coap_OTA</li>
+<li>Thread_OTA_Client</li>
+<li>Thread_OTA_Server</li>
+<li>Thread_SED_Coap_Multicast</li>
+<li>Thread_Skeleton</li>
+<li>Thread_Udp</li>
+</ul></li>
+<li>Zigbee:
+<ul>
+<li>Zigbee_Basic_Client_Coord</li>
+<li>Zigbee_Basic_Server_Router</li>
+<li>Zigbee_FindBind_Coord</li>
+<li>Zigbee_FindBind_IAS_Router</li>
+<li>Zigbee_FindBind_OnOff_Router</li>
+<li>Zigbee_OnOff_Client_Distrib</li>
+<li>Zigbee_OnOff_Client_Router</li>
+<li>Zigbee_OnOff_Client_Router_FreeRtos</li>
+<li>Zigbee_OnOff_Client_Router_ThreadX</li>
+<li>Zigbee_OnOff_Client_SED</li>
+<li>Zigbee_OnOff_Server_Coord</li>
+<li>Zigbee_OnOff_Server_Coord_FreeRtos</li>
+<li>Zigbee_OnOff_Server_Coord_ThreadX</li>
+<li>Zigbee_OnOff_Server_Distrib</li>
+<li>Zigbee_PowerConfig_Client_Coord</li>
+<li>Zigbee_PowerConfig_Server_SED</li>
+<li>Zigbee_TempMeas_Client_Coord</li>
+<li>Zigbee_TempMeas_Client_Coord_InstallCode</li>
+<li>Zigbee_TempMeas_Server_Router</li>
+<li>Zigbee_TempMeas_Server_Router_InstallCode</li>
+<li>Zigbee_TempMeas_Server_SED</li>
+<li>Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee_Thermostat_Server_Router</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba65i-dk1-3">STM32WBA65I-DK1</h2>
+<ul>
+<li>Following example has been added:
+<ul>
+<li>SAI_AudioPlay</li>
+</ul></li>
+<li>Following new applications are now supported:
+<ul>
+<li>BLE_Audio:
+<ul>
+<li>BLE_Audio_GMAP_Central</li>
+<li>BLE_Audio_GMAP_Peripheral</li>
+<li>BLE_Audio_HAP_Central</li>
+<li>BLE_Audio_HAP_Peripheral</li>
+<li>BLE_Audio_PBP_Sink</li>
+<li>BLE_Audio_PBP_Source</li>
+<li>BLE_Audio_TMAP_Central</li>
+<li>BLE_Audio_TMAP_Peripheral</li>
+</ul></li>
+<li>BLE_Thread:
+<ul>
+<li>BLE_HeartRate_Thread_FreeRTOS</li>
+<li>BLE_HeartRate_Thread_SED_FreeRTOS</li>
+</ul></li>
+<li>Zigbee:
+<ul>
+<li>Zigbee_OnOff_Client_Router</li>
+<li>Zigbee_OnOff_Server_Coord</li>
+<li>Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee_Thermostat_Server_Router</li>
+</ul></li>
+<li>ROT
+<ul>
+<li>OEMiROT_Boot</li>
+<li>OEMiROT_Appli_TrustZone</li>
+<li>OEMiROT_Appli</li>
+<li>OEMiROT_Loader_TrustZone</li>
+</ul></li>
+<li>Add ROT_Provisioning for OEMiRoT &amp; OEMiRoT_OEMuRoT</li>
+<li>Add ROT Templates (OEMiROT_Appli_TrustZone and OEMiROT_Appli)</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA5xx_V1.4.1.zip">Patch EWARM WBA5x</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBA6xx_V1.0.0.zip">Patch EWARM WBA6x</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.5.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32CubeIDE V1.18.0 (GCC12, GCC13 not supported)</td>
+<td>V1.18.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-3">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx, STM32WBA55xx, STM32WBA62xx, STM32WBA63xx, STM32WBA64xx and STM32WBA65xx</li>
+<li>B-WBA5M-WPAN, NUCLEO-WBA55CG, STM32WBA55G-DK1, NUCLEO-WBA65RI and STM32WBA65I-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Thread_Coap_Generic_NVM (no MDK-ARM)</li>
+<li>OpenBootloader (no EWARM)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+</ul></li>
+<li>B-WBA5M-WPAN
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee_OnOff_Client_Router (all IDEs)</li>
+<li>Zigbee_OnOff_Server_Coord (all IDEs)</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA65RI
+<ul>
+<li>All Applications are provided with EWARM and STM32CubeIDE support except:
+<ul>
+<li>Thread_OTA_Server (no STM32CubeIDE)</li>
+<li>Thread_OTA_Client (no STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA65I-DK1
+<ul>
+<li>ROT: OEMuRoT update not supported</li>
+<li>ROT: OEMuRoT swap mode not functional</li>
+<li>Applications MbedTLS_HW_ALT and MbedTLS_SW, KEIL not supported</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.14.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.14.0.<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="notes-3">Notes</h2>
+<ul>
+<li>This release contains many other fixes only the most important ones are detailed in the release notes.</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11" aria-hidden="true"> <label for="collapse-section11" aria-hidden="true"><strong>V1.5.0 / 30-October-2024</strong></label>
+<div>
+<h2 id="main-changes-4">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-stm32wba5mxx-and-stm32wba55xx-devices">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong>, <strong>STM32WBA5Mxx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-4">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-3">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B-WBA5M-WPAN</td>
+<td style="text-align: left;">LL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\B-WBA5M-WPAN\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="b-wba5m-wpan-3">B-WBA5M-WPAN</h2>
+<ul>
+<li>Add HAL and LL templates</li>
+<li>Add new applications demonstrating BLE, Thread and Zigbee capabilities
+<ul>
+<li>BLE
+<ul>
+<li>BLE_HR_P2PServer</li>
+</ul></li>
+<li>Thread
+<ul>
+<li>Thread_Coap_Generic</li>
+</ul></li>
+<li>Zigbee
+<ul>
+<li>Zigbee_OnOff_Client_Router</li>
+<li>Zigbee_OnOff_Server_Coord<br />
+</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="nucleo-wba55cg-4">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Add TrustZone examples (Cortex, DMA, Flash, GPIO, GTZC, HASH, RCC, RTC)</li>
+<li>Update applications demonstrating BLE, Thread and Zigbee capabilities</li>
+<li>Add new applications demonstrating BLE_Mac capabilities
+<ul>
+<li>BLE_HeartRate_Mac_FFD</li>
+<li>BLE_HeartRate_Mac_RFD</li>
+</ul></li>
+<li>Add new application demonstrating Mac capabilities
+<ul>
+<li>Mac_802_15_4_Node_Antenna_Diversity</li>
+</ul></li>
+<li>Add new applications demonstrating Thread capabilities
+<ul>
+<li>Thread_Coap_Generic_FreeRTOS</li>
+<li>Thread_Coap_OTA</li>
+<li>Thread_OTA_Client</li>
+<li>Thread_OTA_Server</li>
+<li>Thread_RCP</li>
+</ul></li>
+<li>Add new applications demonstrating Zigbee capabilities
+<ul>
+<li>Zigbee_TempMeas_Client_Coord_InstallCode</li>
+<li>Zigbee_TempMeas_Server_Router_InstallCode<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="nucleo-wba52cg">NUCLEO-WBA52CG</h2>
+<ul>
+<li>The board NUCLEO-WBA52CG is now replaced by the NUCLEO-WBA55CG.</li>
+<li>The CubeFW 1.1.0 and 1.1.1 must be used for the NUCLEO-WBA52CG.<br />
+</li>
+</ul>
+<h2 id="stm32wba55g-dk1-1">STM32WBA55G-DK1</h2>
+<ul>
+<li>Update applications demonstrating BLE, Zigbee capabilities</li>
+<li>BLE Audio Update :
+<ul>
+<li>Modification of STM32WBA55CGUX_FLASH.ld in HAP Peripheral project to add NVM section</li>
+<li>Update PBP Source Readme.html to change BAP_BROADCAST_ID location from pbp_app.h to pbp_app_conf.h</li>
+<li>193084 - GAP role is wrong in BLE_Audio_PBP_Source application : GAP role is assigned as “Broadcaster”</li>
+<li>193093 - Joystick in BLE_Audio_PBP_Source is not functional : Remove Joystick reference in readme file</li>
+<li>191439 - Bypass BSP with register access, add status to trigger callback</li>
+<li>Fixed issue where tmap_app and hap_app would allocate all the ASE at the reception of one CAP_UNICAST_CLIENT_ASE_STATE_EVT</li>
+<li>Added task for advertising stop after timer timeout</li>
+<li>Fixed issue where TMAP Peripheral could not sync to Broadcast Sources with channel alloc on subgroup level</li>
+<li>Fixed issue : wrong BIG parameters due to previous initialization</li>
+<li>Merge usecase_dev_mgmt files in all the BLE Audio projects</li>
+<li>Modification in tmap.c to be compliant with usecase_dev_mgmt<br />
+</li>
+<li>Add configuration of new field ‘CachingEn’ of the BAP_AudioStreamCtrlSrvConfig_t structure in the Audio projects supporting Unicast Server role</li>
+<li>Fix for un-register ISO Group based on CIS activity instead of CIG create parameters in ble_codec.c in BLE Audio projects</li>
+<li>In TMAP Peripheral project, add set volume, change broadcast name display<br />
+</li>
+<li>APP_SIRK defined in hap_app_conf.h or tmap_app_conf.h is redefined to have a size of 16 bytes as requested by the CSIP specification.</li>
+<li>Fix Issue in HA layer : HAP_HA_FindNextAvailablePreset() is called with incorrect parameter in hap_ha.c file<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv9_STM32WBAx_V1.4.0.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.4.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.16.0 (GCC12)</td>
+<td>V1.16.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-4">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx, STM32WBA5Mxx and STM32WBA55xx</li>
+<li>B-WBA5M-WPAN, NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Applications/SBSFU</li>
+<li>Applications/TFM</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (EWARM / MDK-ARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+<li>Tx_MPU ThreadX application is not supported in STM32CubeIDE</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE_p2pServerThreadX</li>
+<li>BLE_HeartRate_Thread_SED (only EWARM and STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+<li>BLE_Audio_PBP_Source (only EWARM and MDK-ARM)</li>
+</ul></li>
+</ul></li>
+<li>B-WBA5M-WPAN
+<ul>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE_HR_P2PServer (only EWARM)</li>
+<li>Thread_Coap_Generic (only EWARM and cubeIDE)<br />
+</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="dependencies-4">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.12.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.12.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-4">Notes</h2>
+<ul>
+<li>This release contains many other fixes only the most important ones are detailed in the release notes.</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10" aria-hidden="true"> <label for="collapse-section10" aria-hidden="true"><strong>V1.4.1 / 19-July-2024</strong></label>
+<div>
+<h2 id="main-changes-5">Main Changes</h2>
+<h3 id="patch-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-and-stm32wba55xx-devices">Patch Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-5">Contents</h2>
+<h3 id="patch-release-of-stm32cubewba-projects-1">Patch Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="connectivity">Connectivity</h2>
+<ul>
+<li><p>Productive PHY settings including AoA/AoD support.</p></li>
+<li><p>WIFI Packet Traffic Arbiter (via PTACONV) support on 802.15.4 applications.</p></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-5">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Update Applications demonstrating BLE capabilities</li>
+<li>Update Applications demonstrating Zigbee capabilities</li>
+<li>Update Applications demonstrating Thread capabilities</li>
+<li>Update Applications demonstrating MAC and PHY capabilities</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Add new application demonstrating Thread capabilities
+<ul>
+<li>Thread_Udp</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba52cg-1">NUCLEO-WBA52CG</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba55g-dk1-2">STM32WBA55G-DK1</h2>
+<ul>
+<li>Update Applications demonstrating BLE Audio capabilities :
+<ul>
+<li>Sets an initial volume when TMAP peripheral starts with broadcast sink.</li>
+<li>Glitch on right remote Set Member due to fake stereo generation issue at TMAP and HAP Central.</li>
+<li>Improve disconnection action in TMAP/HAP Central project to disconnect to all connected devices.</li>
+<li>Change Project application to remove margin to the min controller delay by reading Controller delay with codec configuration length nul.</li>
+<li>Update HAP and TMAP projects to improve behavior when ACL disconnection occurs.</li>
+<li>Code change to add SUPPORTED_AUDIO_CHNL_COUNT_1 in capability CODEC_CAP_AUDIO_CHNL_COUNTS in PAC Record in TMAP Peripheral and HAP Peripheral projects.</li>
+<li>Add CODEC_PROC_MARGIN_US and CODEC_RF_SETUP_US, remove extra margin at the application level.</li>
+<li>Add GAP Database Appearance update on TMAP Peripheral.<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.4.0-RC2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.5.0-RC5.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.15.1 (GCC12)</td>
+<td>V1.15.1</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-5">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx and STM32WBA55xx</li>
+<li>NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Applications/SBSFU</li>
+<li>Applications/TFM</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (EWARM / MDK-ARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+<li>Tx_MPU ThreadX application is not supported in STM32CubeIDE</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee :
+<ul>
+<li>Zigbee_OnOff_Client_Router_OTA and Zigbee_TempMeas_Server_SED (not supported in STM32CubeIDE and MDK-ARM)</li>
+<li>Zigbee_APS_Coord and Zigbee_APS_Router (not supported in MDK-ARM)</li>
+<li>Zigbee_OnOff_Server_Coord_ThreadX and Zigbee_OnOff_Client_Router_ThreadX (not supported in CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.12.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.12.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-1">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-5">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9"  aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.4.0 / 05-June-2024</strong></label>
+<div>
+<h2 id="main-changes-6">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba50xx-stm32wba52xx-stm32wba54xx-and-stm32wba55xx-devices">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA50xx</strong>, <strong>STM32WBA52xx</strong>, <strong>STM32WBA54xx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-6">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-4">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="connectivity-1">Connectivity</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1</li>
+<li>Connectivity applications not supported on this release for NUCLEO-WBA52CG</li>
+<li><p>Applications based on ThreadX are now delivered on MDK-ARM (Keil) toolchain.</p></li>
+<li>Zigbee Applications:
+<ul>
+<li>By default, Zigbee Applications are based on the Zigbee R23 stack version. Nevertheless , on this release most of these Zigbee applications supports R22 stack version as well (Refers to the a readme.html associated to each application)</li>
+</ul></li>
+<li>ID 182792 - WBA Keil MDK-ARM project link issue
+<ul>
+<li>Current solution is to do the following modification manually after the generation:
+<ol type="1">
+<li>Right click on your project and click on “Options for Target […]”.</li>
+<li>Click on the “C/C++ (AC6)” panel.</li>
+<li>Untick the “Short enums/wchar” compiler option.</li>
+<li>Manually add to “Misc Controls” as addition compiler options the “-fshort-enums” option.</li>
+<li>Save your project, click on build, and the libraries will be linked.<br />
+</li>
+</ol></li>
+</ul></li>
+</ul>
+<h2 id="nucleo-wba55cg-6">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Update Applications demonstrating BLE capabilities</li>
+<li>Update Applications demonstrating Zigbee capabilities</li>
+<li>Update Applications demonstrating Thread capabilities</li>
+<li>Add new application demonstrating BLE capabilities
+<ul>
+<li>BLE_p2pServer_Simplest
+<ul>
+<li>Demonstre Point-to-Point communication using BLE configuration as simple as possible</li>
+</ul></li>
+</ul></li>
+<li>Add new application demonstrating MAC capabilities
+<ul>
+<li>Mac_802_15_4_LPM_Periodic_Tx</li>
+</ul></li>
+<li>Add new application demonstrating Zigbee capabilities
+<ul>
+<li>Zigbee_OTA_Client_Router</li>
+<li>Zigbee_OTA_Server_Coord</li>
+<li>Zigbee_OnOff_Nvm_Client_Router</li>
+<li>Zigbee_OnOff_Nvm_Server_Coord</li>
+<li>Zigbee_PowerConfig_Server_SED<br />
+</li>
+</ul></li>
+</ul>
+<h2 id="nucleo-wba52cg-2">NUCLEO-WBA52CG</h2>
+<ul>
+<li>Update Applications demonstrating SBSFU/TFM capabilities<br />
+</li>
+</ul>
+<h2 id="stm32wba55g-dk1-3">STM32WBA55G-DK1</h2>
+<ul>
+<li>Add new BLE Audio applications demonstrating Hearing Access Profile
+<ul>
+<li>BLE_Audio_HAP_Central</li>
+<li>BLE_Audio_HAP_Peripheral</li>
+</ul></li>
+<li>Rename applications demonstrating BLE Audio
+<ul>
+<li>Ble_Audio_TMAP_Unicast_Server to Ble_Audio_TMAP_Peripheral</li>
+<li>Ble_Audio_TMAP_Unicast_Client to Ble_Audio_TMAP_Central</li>
+</ul></li>
+<li>Update applications demonstrating BLE Audio capabilities
+<ul>
+<li>Add Broadcast feature in TMAP projects</li>
+<li>Add Coordinated Set feature in TMAP projects</li>
+</ul></li>
+<li>Update Applications demonstrating BLE capabilities</li>
+<li>Update Applications demonstrating Zigbee capabilities</li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.3.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.3.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.15.1 (GCC12)</td>
+<td>V1.15.1</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-6">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA50xx, STM32WBA52xx, STM32WBA54xx and STM32WBA55xx</li>
+<li>NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-6">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Applications/SBSFU</li>
+<li>Applications/TFM</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (EWARM / MDK-ARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+<li>Tx_MPU ThreadX application is not supported in STM32CubeIDE</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee :
+<ul>
+<li>Zigbee_OnOff_Client_Router_OTA and Zigbee_TempMeas_Server_SED (not supported in STM32CubeIDE and MDK-ARM)</li>
+<li>Zigbee_APS_Coord and Zigbee_APS_Router (not supported in MDK-ARM)</li>
+<li>Zigbee_OnOff_Server_Coord_ThreadX and Zigbee_OnOff_Client_Router_ThreadX (not supported in CubeIDE)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-6">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.12.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.12.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-2">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-6">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.3.1 / 22-March-2024</strong></label>
+<div>
+<h2 id="main-changes-7">Main Changes</h2>
+<h3 id="official-patch-release-of-stm32cubewba-firmware-package-supporting-stm32wba52xx-and-stm32wba55xx-devices">Official Patch Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA52xx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-7">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-5">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="connectivity-2">Connectivity</h2>
+<ul>
+<li>BLE Applications
+<ul>
+<li>BLE_BeaconHCI:
+<ul>
+<li>ID 170214: Fix unaligned access memory on Keil with MEMSET macro, .ioc file removed as this project is not CubeMX compliant with fix mentioned above.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-7">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Update of RTC_TAMPER configuration to support Nucleo MB1801 revD without external pull-up on push_button
+<ul>
+<li>Examples/RTC/RTC_Tamper</li>
+<li>Examples_LL/RTC/RTC_Tamper_Init</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba52cg-3">NUCLEO-WBA52CG</h2>
+<ul>
+<li>Update Applications SBSFU/TFM.</li>
+<li>Update of RTC_TAMPER configuration to support Nucleo MB1801 revD without external pull-up on push_button
+<ul>
+<li>Examples/RTC/RTC_Tamper</li>
+<li>Examples_LL/RTC/RTC_Tamper_Init</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba55g-dk1-4">STM32WBA55G-DK1</h2>
+<ul>
+<li>STM32WBA55G-DK1 Audio :
+<ul>
+<li>MDK-ARM projects porting added.</li>
+<li>Improve behavior of Unicast Server with Pixel smartphone: Lower MTU to 100 and request ACL PHY Change to 2M to reduce the ACL to ISO timing.</li>
+<li>Add headset microphone gain configuration in app_conf.h.</li>
+<li>Move I2C initialization before CIS establishment.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.3.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.3.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.14.0 (GCC11)</td>
+<td>V1.14.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-7">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA52xx and STM32WBA55xx devices</li>
+<li>NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-7">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Applications/SBSFU</li>
+<li>Applications/TFM</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Applications based on ThreadX not delivered on MDK-ARM (Keil) toolchain:
+<ul>
+<li>ID 152807: Compilation issue on MDK-ARM (Keil) with MW threadx-6.2.0.221223.</li>
+</ul></li>
+<li>BLE Audio Projects not delivered on MDK-ARM (Keil) toolchain :
+<ul>
+<li>ID 171331 : Library compiled with “hardfp” not correctly linked to math function provided by Keil</li>
+</ul></li>
+<li>BLE Audio TMAP Unicast Client Project:
+<ul>
+<li>In TMAP Call Gateway role, CIS/ACL disconnection could occur in case of connections with 2 TMAP Terminals with Codec Configuration above 16 kHz ( CPU usage + bandwidth limitation)</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_HMAC_SHA1MD5, HASH/HASH_SHA1MD5_DMA (only EWARM)</li>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (only EWARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: COMP/COMP_CompareGpioVsVrefInt_Window_IT, CORTEX/CORTEXM_SysTick_LSE, PWR/PWR_RUN_SMPS, PWR/PWR_STOP1_RTC (only EWARM)</li>
+<li>Examples_LL: COMP/COMP_CompareGpioVsVrefInt_OutputGpio_Init, PWR/PWR_SMPS_16MHZ_HSI, PWR/PWR_SMPS_64MHZ_HSI_PLL (only EWARM)</li>
+</ul></li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee :
+<ul>
+<li>Zigbee_FindBind_IAS_Router, Zigbee_OnOff_Client_SED, Zigbee_OnOff_Server_Coord_ThreadX, Zigbee_PowerConfig_Server_SED, Zigbee_PressMeas_Server_Router (not supported in STM32CubeIDE)</li>
+<li>Zigbee_OnOff_Client_Router_ThreadX, Zigbee_OnOff_Server_Coord_ThreadX (not supported in MDK-ARM)</li>
+</ul></li>
+<li>BLE : BLE_HeartRateThreadX, BLE_p2pServerThreadX (not supported in MDK-ARM)</li>
+<li>Thread : Thread_Coap_Generic_ThreadX (not supported in MDK-ARM)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+</ul></li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE : BLE_Audio_PBP_Sink, BLE_Audio_PBP_Source, BLE_Audio_TMAP_Unicast_Client, BLE_Audio_TMAP_Unicast_Server (not supported in MDK-ARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-7">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.11.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.11.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-3">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-7">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.3.0 / 07-February-2024</strong></label>
+<div>
+<h2 id="main-changes-8">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba52xx-and-stm32wba55xx-devices">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA52xx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-8">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-6">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="connectivity-3">Connectivity</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1</li>
+<li>Connectivity applications not supported on this release for NUCLEO-WBA52CG</li>
+<li>BLE and Zigbee project are now supporting SMPS power supply by default for project with Mx support.</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-8">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Update Applications demonstrating BLE capabilities</li>
+<li>Update Applications demonstrating Zigbee capabilities</li>
+<li>Update Applications demonstrating Thread capabilities</li>
+<li>Update Examples LL demonstrating IP peripherals with use of push-button to enable internal pull-up</li>
+</ul>
+<h2 id="nucleo-wba52cg-4">NUCLEO-WBA52CG</h2>
+<ul>
+<li>Update Examples LL demonstrating IP peripherals with use of push-button to enable internal pull-up</li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba55g-dk1-5">STM32WBA55G-DK1</h2>
+<ul>
+<li>Add new applications demonstrating BLE Audio capabilities
+<ul>
+<li>BLE_Audio_TMAP_Unicast_Server</li>
+<li>BLE_Audio_TMAP_Unicast_Client</li>
+</ul></li>
+<li>Update Applications demonstrating BLE capabilities</li>
+<li>Update Applications demonstrating Zigbee capabilities</li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.3.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.38 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.3.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.14.0 (GCC11)</td>
+<td>V1.14.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-8">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA52xx and STM32WBA55xx devices</li>
+<li>NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-8">Known Limitations</h2>
+<ul>
+<li>The following projects using RTC TAMPER feature and push-button line are not functional with Nucleo MB1801-RevD:
+<ul>
+<li>Applications/SBSFU</li>
+<li>Applications/TFM</li>
+<li>Examples/RTC/RTC_Tamper</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples_LL/RTC/RTC_Tamper_Init</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+<li>Possible workaround is to add external pull-up on the board, to avoid floating lines in this specific configuration.</li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Applications based on ThreadX not delivered on MDK-ARM (Keil) toolchain:
+<ul>
+<li>ID 152807: Compilation issue on MDK-ARM (Keil) with MW threadx-6.2.0.221223.</li>
+</ul></li>
+<li>BLE Audio Projects not delivered on MDK-ARM (Keil) toolchain :
+<ul>
+<li>ID 171331 : Library compiled with “hardfp” not correctly linked to math function provided by Keil</li>
+</ul></li>
+<li>BLE Audio TMAP Unicast Client Project:
+<ul>
+<li>In TMAP Call Gateway role, CIS/ACL disconnection could occur in case of connections with 2 TMAP Terminals with Codec Configuration above 16 kHz ( CPU usage + bandwidth limitation)</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_HMAC_SHA1MD5, HASH/HASH_SHA1MD5_DMA (only EWARM)</li>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (only EWARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+</ul></li>
+</ul></li>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: COMP/COMP_CompareGpioVsVrefInt_Window_IT, CORTEX/CORTEXM_SysTick_LSE, PWR/PWR_RUN_SMPS, PWR/PWR_STOP1_RTC (only EWARM)</li>
+<li>Examples_LL: COMP/COMP_CompareGpioVsVrefInt_OutputGpio_Init, PWR/PWR_SMPS_16MHZ_HSI, PWR/PWR_SMPS_64MHZ_HSI_PLL (only EWARM)</li>
+</ul></li>
+<li>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Zigbee :
+<ul>
+<li>Zigbee_FindBind_IAS_Router, Zigbee_OnOff_Client_SED, Zigbee_OnOff_Server_Coord_ThreadX, Zigbee_PowerConfig_Server_SED, Zigbee_PressMeas_Server_Router (not supported in STM32CubeIDE)</li>
+<li>Zigbee_OnOff_Client_Router_ThreadX, Zigbee_OnOff_Server_Coord_ThreadX (not supported in MDK-ARM)</li>
+</ul></li>
+<li>BLE : BLE_HeartRateThreadX, BLE_p2pServerThreadX (not supported in MDK-ARM)</li>
+<li>Thread : Thread_Coap_Generic_ThreadX (not supported in MDK-ARM)</li>
+</ul></li>
+</ul></li>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example</li>
+<li>All Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+</ul></li>
+<li>All Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE : BLE_Audio_PBP_Sink, BLE_Audio_PBP_Source, BLE_Audio_TMAP_Unicast_Client, BLE_Audio_TMAP_Unicast_Server (not supported in MDK-ARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-8">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.11.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.11.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-4">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-8">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true"><strong>V1.2.0 / 02-November-2023</strong></label>
+<div>
+<h2 id="main-changes-9">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba52xx-and-stm32wba55xx-devices-1">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA52xx</strong> and <strong>STM32WBA55xx</strong> devices</h3>
+<h2 id="contents-9">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-7">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">MIX Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA55CG</td>
+<td style="text-align: left;">LL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA55CG\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">Applications <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">HAL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32WBA55G-DK1</td>
+<td style="text-align: left;">LL Template <span class="icon-st-add"></span></td>
+<td style="text-align: left;">Projects\STM32WBA55G-DK1\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="connectivity-4">Connectivity</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1</li>
+<li>Connectivity applications not supported on this release for NUCLEO-WBA52CG</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba52cg-5">NUCLEO-WBA52CG</h2>
+<ul>
+<li>Update Applications demonstrating AzureRTOS</li>
+</ul>
+<p><br />
+</p>
+<h2 id="nucleo-wba55cg-9">NUCLEO-WBA55CG</h2>
+<ul>
+<li>Add applications demonstrating Bluetooth Low Energy capabilities
+<ul>
+<li>BLE/BLE_ApplicationInstallManager</li>
+<li>BLE/BLE_Beacon</li>
+<li>BLE/BLE_BeaconHCI</li>
+<li>BLE/BLE_DataThroughput_Client</li>
+<li>BLE/BLE_DataThroughput_Server</li>
+<li>BLE/BLE_HealthThermometer</li>
+<li>BLE/BLE_HeartRate</li>
+<li>BLE/BLE_HeartRate_ota</li>
+<li>BLE/BLE_HeartRateThreadX</li>
+<li>BLE/BLE_p2pClient</li>
+<li>BLE/BLE_p2pClient_Ext</li>
+<li>BLE/BLE_p2pRouter</li>
+<li>BLE/BLE_p2pServer</li>
+<li>BLE/BLE_p2pServer_Ext</li>
+<li>BLE/BLE_p2pServer_ota</li>
+<li>BLE/BLE_p2pServer_TZ</li>
+<li>BLE/BLE_p2pServerThreadX</li>
+<li>BLE/BLE_Power_Central</li>
+<li>BLE/BLE_Power_Peripheral</li>
+<li>BLE/BLE_SerialCom_Central</li>
+<li>BLE/BLE_SerialCom_Peripheral</li>
+<li>BLE/BLE_TransparentMode</li>
+</ul></li>
+<li>Add new applications demonstrating Thread capabilities
+<ul>
+<li>Thread/Thread_Cli_Cmd</li>
+<li>Thread/Thread_Coap_Generic</li>
+<li>Thread/Thread_Coap_Generic_ThreadX</li>
+<li>Thread/Thread_Skeleton</li>
+</ul></li>
+<li>Add new applications demonstrating Zigbee capabilities
+<ul>
+<li>Zigbee/Zigbee_APS_Coord</li>
+<li>Zigbee/Zigbee_APS_Router</li>
+<li>Zigbee/Zigbee_Basic_Client_Coord</li>
+<li>Zigbee/Zigbee_Basic_Server_Router</li>
+<li>Zigbee/Zigbee_Diagnostic_Client_Coord</li>
+<li>Zigbee/Zigbee_Diagnostic_Server_Router</li>
+<li>Zigbee/Zigbee_DoorLock_Client_Router</li>
+<li>Zigbee/Zigbee_DoorLock_Server_Coord</li>
+<li>Zigbee/Zigbee_FindBind_Coord</li>
+<li>Zigbee/Zigbee_FindBind_IAS_Router</li>
+<li>Zigbee/Zigbee_FindBind_OnOff_Router</li>
+<li>Zigbee/Zigbee_Messaging_Client_Coord</li>
+<li>Zigbee/Zigbee_Messaging_Server_Router</li>
+<li>Zigbee/Zigbee_MeterId_Client_Coord</li>
+<li>Zigbee/Zigbee_MeterId_Server_Router</li>
+<li>Zigbee/Zigbee_OccupSensing_Client_Coord</li>
+<li>Zigbee/Zigbee_OccupSensing_Server_Router</li>
+<li>Zigbee/Zigbee_OnOff_Client_Distrib</li>
+<li>Zigbee/Zigbee_OnOff_Client_Router</li>
+<li>Zigbee/Zigbee_OnOff_Client_Router_ThreadX</li>
+<li>Zigbee/Zigbee_OnOff_Client_SED</li>
+<li>Zigbee/Zigbee_OnOff_Server_Coord</li>
+<li>Zigbee/Zigbee_OnOff_Server_Coord_ThreadX</li>
+<li>Zigbee/Zigbee_OnOff_Server_Distrib</li>
+<li>Zigbee/Zigbee_OnOffSwCfg_Client_Coord</li>
+<li>Zigbee/Zigbee_OnOffSwCfg_Server_Router</li>
+<li>Zigbee/Zigbee_PowerConfig_Client_Coord</li>
+<li>Zigbee/Zigbee_PowerConfig_Server_SED</li>
+<li>Zigbee/Zigbee_PressMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_PressMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Skeleton</li>
+<li>Zigbee/Zigbee_TempMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_TempMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee/Zigbee_Thermostat_Server_Router</li>
+</ul></li>
+<li>Add new applications demonstrating MAC 802.15.4 capabilities
+<ul>
+<li>Mac_802_15_4/Mac_802_15_4_Coordinator</li>
+<li>Mac_802_15_4/Mac_802_15_4_FFD</li>
+<li>Mac_802_15_4/Mac_802_15_4_LPM_Periodic_Transmit</li>
+<li>Mac_802_15_4/Mac_802_15_4_Node</li>
+<li>Mac_802_15_4/Mac_802_15_4_RFD</li>
+</ul></li>
+<li>Add new application demonstrating Phy 802.15.4 capabilities
+<ul>
+<li>Phy_802_15_4/Phy_Cli</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Add Templates (TrustZone Disabled/Enabled) and Templates_LL projects based on HAL/LL APIs</li>
+<li>Add LL/HAL Examples (w/o TrustZone) demonstrating the same peripherals as NUCLEO-WBA52CG</li>
+<li>Add LL/HAL Examples demonstrating COMP, PWR (SMPS) peripherals on with STM32WBA55xx
+<ul>
+<li>Examples/COMP/COMP_CompareGpioVsVrefInt_IT</li>
+<li>Examples/COMP/COMP_CompareGpioVsVrefInt_Window_IT</li>
+<li>Examples/CORTEX/CORTEXM_SysTick_LSE</li>
+<li>Examples/PWR/PWR_STOP1_RTC</li>
+<li>Examples_LL/COMP/COMP_CompareGpioVsVrefInt_IT_Init</li>
+<li>Examples_LL/COMP/COMP_CompareGpioVsVrefInt_OutputGpio_Init</li>
+<li>Examples_LL/PWR/PWR_SMPS_16MHZ_HSI</li>
+<li>Examples_LL/PWR/PWR_SMPS_64MHZ_HSI_PLL</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="stm32wba55g-dk1-6">STM32WBA55G-DK1</h2>
+<ul>
+<li>Add new applications demonstrating BLE Audio capabilities
+<ul>
+<li>BLE/BLE_Audio_PBP_Sink</li>
+<li>BLE/BLE_Audio_PBP_Source</li>
+</ul></li>
+<li>Add new applications demonstrating BLE capabilities
+<ul>
+<li>BLE/BLE_HeartRate</li>
+<li>BLE/BLE_HID_Mouse</li>
+</ul></li>
+<li>Add new applications demonstrating Zigbee capabilities
+<ul>
+<li>Zigbee/Zigbee_OnOff_Client_Router</li>
+<li>Zigbee/Zigbee_OnOff_Server_Coord</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Add Templates (TrustZone Disabled/Enabled) and Templates_LL projects based on HAL/LL APIs</li>
+<li>Add LL/HAL Examples demonstrating SYSTEM and SAI peripherals with STM32WBA55xx
+<ul>
+<li>Examples/BSP/BSP_Example</li>
+<li>Examples/CORTEX/CORTEXM_ModePrivilege</li>
+<li>Examples/DMA/DMA_FLASHToRAM</li>
+<li>Examples/DMA/DMA_LinkedList</li>
+<li>Examples/FLASH/FLASH_EraseProgram</li>
+<li>Examples/FLASH/FLASH_EraseProgram_TrustZone</li>
+<li>Examples/GPIO/GPIO_IOToggle</li>
+<li>Examples/GTZC/GTZC_TZSC_MPCBB_TrustZone</li>
+<li>Examples/PWR/PWR_STANDBY_RTC</li>
+<li>Examples/PWR/PWR_STOP1_RTC</li>
+<li>Examples/RCC/RCC_ClockConfig</li>
+<li>Examples/RTC/RTC_ActiveTamper</li>
+<li>Examples/RTC/RTC_Alarm</li>
+<li>Examples/RTC/RTC_LowPower_STANDBY_WUT</li>
+<li>Examples/RTC/RTC_TimeStamp</li>
+<li>Examples/SAI/SAI_AudioPlay</li>
+<li>Examples_LL/DMA/DMA_CopyFromFlashToMemory_Init</li>
+<li>Examples_LL/EXTI/EXTI_ToggleLedOnIT_Init</li>
+<li>Examples_LL/GPIO/GPIO_InfiniteLedToggling_Init</li>
+<li>Examples_LL/RCC/RCC_UseHSI_PLLasSystemClock</li>
+<li>Examples_LL/RTC/RTC_Alarm_Init</li>
+<li>Examples_LL/RTC/RTC_ExitStandbyWithWakeUpTimer_Init</li>
+<li>Examples_LL/RTC/RTC_Tamper_Init</li>
+<li>Examples_LL/RTC/RTC_TimeStamp_Init</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.3.zip">Patch EWARM</a> <span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.37</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAxx_DFP.1.3.0.zip">Patch MDK-ARM</a> <span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.14.0 (GCC11)</td>
+<td>V1.14.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+<li>To enable GCC11 with STM32CubeIDE, please refer STM32CubeIDE user guide (UM2609 - chapter “Toolchain manager”)</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-9">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA52xx and STM32WBA55xx devices</li>
+<li>NUCLEO-WBA52CG, NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-9">Known Limitations</h2>
+<ul>
+<li>NUCLEO-WBA52CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_HMAC_SHA1MD5, HASH/HASH_SHA1MD5_DMA (only EWARM)</li>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (only EWARM)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>The LPM/Tiny_lpm_3modes application is only provided with EWARM support</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>NUCLEO-WBA55CG
+<ul>
+<li>All LL/HAL Examples are developed using CubeMx except CORTEX/CORTEXM_SysTick_LSE (will be supported within next CubeMx version)</li>
+<li>All NUCLEO-WBA55CG Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: COMP/COMP_CompareGpioVsVrefInt_Window_IT, CORTEX/CORTEXM_SysTick_LSE, PWR/PWR_RUN_SMPS, PWR/PWR_STOP1_RTC (only EWARM)</li>
+<li>Examples_LL: COMP/COMP_CompareGpioVsVrefInt_OutputGpio_Init, PWR/PWR_SMPS_16MHZ_HSI, PWR/PWR_SMPS_64MHZ_HSI_PLL (only EWARM)</li>
+</ul></li>
+<li><p>LL/HAL Examples have been validated on EWARM and MDK-ARM/STM32CubeIDE configuration are provided as is</p></li>
+<li>All BLE applications are developed using CubeMx except BLE_Power_Central, BLE_Power_Peripheral</li>
+<li>The following BLE applications are provided with EWARM and MDK-ARM support (8/22):
+<ul>
+<li>BLE/BLE_ApplicationInstallManager</li>
+<li>BLE/BLE_BeaconHCI</li>
+<li>BLE/BLE_DataThroughput_Client</li>
+<li>BLE/BLE_DataThroughput_Server</li>
+<li>BLE/BLE_HealthThermometer</li>
+<li>BLE/BLE_HeartRate</li>
+<li>BLE/BLE_HeartRate_ota</li>
+<li>BLE/BLE_p2pServer_ota</li>
+</ul></li>
+<li>Mac_802_15_4 and Phy_802_15_4 applications are not provided with CubeMx format</li>
+<li>Thread applications are developed using CubeMx except Thread/Thread_Cli_Cmd, Thread/Thread_Coap_Generic_ThreadX</li>
+<li>Thread applications are provided with STM32CubeIDE configuration except Thread/Thread_Cli_Cmd, Thread/Thread_Coap_Generic_ThreadX</li>
+<li>Thread applications are not provided with MDK-ARM configuration</li>
+<li>Zigbee applications are developed using CubeMx except Zigbee/Zigbee_APS_Coord, Zigbee/Zigbee_APS_Router, Zigbee/Zigbee_Diagnostic_Server_Route</li>
+<li>The following Zigbee applications are not provided with MDK-ARM support:
+<ul>
+<li>Zigbee/Zigbee_APS_Coord</li>
+<li>Zigbee/Zigbee_APS_Router</li>
+<li>Zigbee/Zigbee_OnOff_Client_Router_ThreadX</li>
+<li>Zigbee/Zigbee_OnOff_Server_Coord_ThreadX</li>
+<li>Zigbee/Zigbee_OnOff_Server_Distrib</li>
+<li>Zigbee/Zigbee_OnOffSwCfg_Client_Coord</li>
+<li>Zigbee/Zigbee_OnOffSwCfg_Server_Router</li>
+<li>Zigbee/Zigbee_PowerConfig_Client_Coord</li>
+<li>Zigbee/Zigbee_PowerConfig_Server_SED</li>
+<li>Zigbee/Zigbee_PressMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_PressMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Skeleton</li>
+<li>Zigbee/Zigbee_TempMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_TempMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee/Zigbee_Thermostat_Server_Router</li>
+</ul></li>
+<li>The following Zigbee applications are not provided with STM32CubeIDE support:
+<ul>
+<li>Zigbee/Zigbee_OnOff_Client_Router_ThreadX</li>
+<li>Zigbee/Zigbee_OnOff_Server_Coord_ThreadX</li>
+<li>Zigbee/Zigbee_PowerConfig_Client_Coord</li>
+<li>Zigbee/Zigbee_PowerConfig_Server_SED</li>
+<li>Zigbee/Zigbee_PressMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_PressMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Skeleton</li>
+<li>Zigbee/Zigbee_TempMeas_Client_Coord</li>
+<li>Zigbee/Zigbee_TempMeas_Server_Router</li>
+<li>Zigbee/Zigbee_Thermostat_Client_Coord</li>
+<li>Zigbee/Zigbee_Thermostat_Server_Router</li>
+<li>Zigbee/Zigbee_Find_Bind_Coord</li>
+<li>Zigbee/Zigbee_Find_Bind_OnOff_Router</li>
+<li>Zigbee/Zigbee_Find_Bind_IAS_Router</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>STM32WBA55G-DK1
+<ul>
+<li>All BLE and Zigbee applications are provided with EWARM support only</li>
+<li>All LL/HAL Examples are developed using CubeMx except BSP/BSP_Example (will be supported within next CubeMx version)</li>
+<li>All STM32WBA55G-DK1 Examples/Templates are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: RTC/RTC_ActiveTamper (only EWARM)</li>
+<li>Examples_LL: RTC/RTC_Tamper_Init, RTC_TimeStamp_Init (only EWARM)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-9">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.10.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.10.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-5">Backward compatibility</h2>
+<ul>
+<li>Connectivity applications are available for NUCLEO-WBA55CG and STM32WBA55G-DK1 boards</li>
+<li>Connectivity applications are not supported on this release for NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="notes-9">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.1.0 / 06-June-2023</strong></label>
+<div>
+<h2 id="main-changes-10">Main Changes</h2>
+<h3 id="official-release-of-stm32cubewba-firmware-package-supporting-stm32wba52xx-devices">Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA52xx</strong> devices</h3>
+<h2 id="contents-10">Contents</h2>
+<h3 id="official-release-of-stm32cubewba-projects-8">Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples <span class="icon-st-update"></span></td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<ul>
+<li>Update Applications demonstrating Bluetooth Low Energy capabilities with STM32WBA52xx
+<ul>
+<li>Maximum number of simultaneous connections supported by the device is now 20
+<ul>
+<li>using library LinkLayer_BLE_Basic_20_links_lib.a (to be used with stm32wba_ble_stack_basic or stm32wba_ble_stack_llobasic)</li>
+</ul></li>
+<li>System Clock Manager (scm): PLL is supported with BLE applications</li>
+<li>BLE stack options are now configurable from CubeMX interface</li>
+<li>MAX ATT MTU size set to 251</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Update Examples HAL/LL/MIX demonstrating IP peripherals to include latest corrections</li>
+<li>Add new Examples HAL/LL for ADC, HASH, I2C, IWDG, PKA, PWR, SPI, TIM and UART IP peripherals
+<ul>
+<li>NUCLEO-WBA52CG/Examples/HASH/HASH_HMAC_SHA1MD5</li>
+<li>NUCLEO-WBA52CG/Examples/HASH/HASH_SHA1MD5_DMA</li>
+<li>NUCLEO-WBA52CG/Examples/IWDG/IWDG_Reset</li>
+<li>NUCLEO-WBA52CG/Examples/PWR/PWR_STANDBY_RTC</li>
+<li>NUCLEO-WBA52CG/Examples/TIM/TIM_DMA</li>
+<li>NUCLEO-WBA52CG/Examples/TIM/TIM_DMABurst</li>
+<li>NUCLEO-WBA52CG/Examples/UART/UART_TwoBoards_ComDMA</li>
+<li>NUCLEO-WBA52CG/Examples/UART/UART_TwoBoards_ComIT</li>
+<li>NUCLEO-WBA52CG/Examples/UART/UART_TwoBoards_ComPolling</li>
+<li>NUCLEO-WBA52CG/Examples_LL/ADC/ADC_ContinuousConversion_TriggerSW_LowPower_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/ADC/ADC_SingleConversion_TriggerSW_DMA_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/ADC/ADC_SingleConversion_TriggerTimer_DMA_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/I2C/I2C_TwoBoards_WakeUpFromStop_IT_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/PKA/PKA_ModularExponentiation</li>
+<li>NUCLEO-WBA52CG/Examples_LL/PWR/PWR_EnterStandbyMode</li>
+<li>NUCLEO-WBA52CG/Examples_LL/PWR/PWR_OptimizedRunMode</li>
+<li>NUCLEO-WBA52CG/Examples_LL/SPI/SPI_OneBoard_HalfDuplex_DMA_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/SPI/SPI_TwoBoards_FullDuplex_DMA_Master_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/SPI/SPI_TwoBoards_FullDuplex_DMA_Slave_Init</li>
+<li>NUCLEO-WBA52CG/Examples_LL/SPI/SPI_TwoBoards_FullDuplex_IT_Master_Init</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Update applications AzureRTOS supporting AzureRTOS 6.2.0
+<ul>
+<li>Add Azure RTOS MW initialization support to ThreadX and FileX</li>
+</ul></li>
+<li>Update applications SBSFU/TFM
+<ul>
+<li>Applications are provided with EWARM, MDK-ARM and STM32CubeIDE support</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.3.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.37</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAx_DFP.1.0.1.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.12.0 (GCC11)</td>
+<td>V1.12.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+<li>To enable GCC11 with STM32CubeIDE, please refer STM32CubeIDE user guide (UM2609 - chapter “Toolchain manager”)</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-10">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA52xx devices</li>
+<li>NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-10">Known Limitations</h2>
+<ul>
+<li>HAL/LL Examples
+<ul>
+<li>All examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: HASH/HASH_HMAC_SHA1MD5, HASH/HASH_SHA1MD5_DMA (only EWARM)</li>
+<li>Examples: HASH/HASH_SHA1_DMA_TrustZone (only EWARM/STM32CubeIDE)</li>
+<li>Examples: RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples_LL: I2C/I2C_OneBoard_AdvCommunication_DMAAndIT_Init (only EWARM)</li>
+</ul></li>
+</ul></li>
+<li>MW WPAN/BLE Applications
+<ul>
+<li>Applications based on ThreadX do not currently support Standby mode.</li>
+<li>Systick is not currently supported in Standby mode in delivered BLE applications.</li>
+<li>STM32CubeIDE support: for “debug” configuration optimization level as to be set to -Os.</li>
+<li>ThreadX based application: RNG and PKA tasks priorities must be higher than BLE Host stack task.</li>
+<li>Warning: Sequencer task definition is no longer split in 2 enumerations.
+<ul>
+<li>This implies user code sections have been renamed. It may be necessary to fulfill newly created user code section with previous content.</li>
+</ul></li>
+<li>All BLE applications are developed using CubeMx except BLE/BLE_ApplicationInstallManager (not eligible)</li>
+<li>All BLE applications are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>BLE/BLE_HeartRate_ota (only EWARM)</li>
+<li>BLE/BLE_p2pServer_ota (only EWARM)</li>
+<li>BLE/BLE_p2pServerThreadX (only EWARM/STM32CubeIDE)</li>
+<li>BLE/BLE_HeartRateThreadX (only EWARM/STM32CubeIDE)</li>
+</ul></li>
+</ul></li>
+<li>MW AzureRTOS Applications
+<ul>
+<li>All AzureRTOS applications are developed using CubeMx except ThreadX/Tx_MPU (not eligible)</li>
+</ul></li>
+<li>MW OpenBootloader Application
+<ul>
+<li>OpenBootloader application is not developed using CubeMx (not eligible)</li>
+</ul></li>
+<li>MW SBSFU/TFM Applications
+<ul>
+<li>All SBSFU/TFM applications are not developed using CubeMx (not eligible)</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>NUCLEO-WBA52CG/Applications/LPM/Tiny_lpm_3modes application is developed using CubeMx and is only provided with EWARM support</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-10">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.9.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.9.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-6">Backward compatibility</h2>
+<ul>
+<li>Not applicable</li>
+</ul>
+<h2 id="notes-10">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.0.0 / 08-February-2023</strong></label>
+<div>
+<h2 id="main-changes-11">Main Changes</h2>
+<h3 id="first-official-release-of-stm32cubewba-firmware-package-supporting-stm32wba52xx-devices">First Official Release of <strong>STM32CubeWBA</strong> Firmware package supporting <strong>STM32WBA52xx</strong> devices</h3>
+<h2 id="contents-11">Contents</h2>
+<h3 id="first-official-release-of-stm32cubewba-projects">First Official Release of STM32CubeWBA Projects</h3>
+<p><small>The Project categories flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">HAL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-WBA52CG</td>
+<td style="text-align: left;">LL Template</td>
+<td style="text-align: left;">Projects\NUCLEO-WBA52CG\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<ul>
+<li>Applications to demonstrate Bluetooth Low Energy capabilities with STM32WBA52xx
+<ul>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_ApplicationInstallManager</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_Beacon</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_DataThroughput_Client</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_DataThroughput_Server</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_HealthThermometer</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_HeartRate</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_HeartRateThreadX</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_HeartRate_ota</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pClient</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pClient_Ext</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pRouter</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pServer</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pServerThreadX</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pServer_Ext</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_p2pServer_ota</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_SerialCom_Central</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_SerialCom_Peripheral</li>
+<li>NUCLEO-WBA52CG/Applications/BLE/BLE_TransparentMode</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Templates (TrustZone Disabled/Enabled) and Templates_LL projects based on HAL/LL APIs
+<ul>
+<li>NUCLEO-WBA52CG/Templates/TrustZoneDisabled</li>
+<li>NUCLEO-WBA52CG/Templates/TrustZoneEnabled</li>
+<li>NUCLEO-WBA52CG/Templates_LL/TrustZoneDisabled</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Examples HAL/LL/MIX for all IP peripherals (TrustZone Disabled/Enabled)
+<ul>
+<li>NUCLEO-WBA52CG/Examples (103 projects)
+<ul>
+<li>ADC/ADC_AnalogWatchdog, ADC/ADC_MultiChannelSingleConversion, ADC/ADC_Oversampling, ADC/ADC_SingleConversion_TriggerSW_IT, ADC/ADC_SingleConversion_TriggerTimer_DMA</li>
+<li>BSP/BSP_Example</li>
+<li>CORTEX/CORTEXM_InterruptSwitch_TrustZone, CORTEX/CORTEXM_ModePrivilege</li>
+<li>CORTEX/CORTEXM_MPU, CORTEX/CORTEXM_ProcessStack, CORTEX/CORTEXM_SysTick</li>
+<li>CRC/CRC_Bytes_Stream_7bit_CRC, CRC/CRC_Data_Reversing_16bit_CRC, CRC/CRC_Example, CRC/CRC_UserDefinedPolynomial</li>
+<li>CRYP/CRYP_AESModes, CRYP/CRYP_DMA, CRYP/CRYP_GCM_GMAC_CMAC_Suspension, CRYP/CRYP_SAES_SharedKey, CRYP/CRYP_SAES_WrapKey</li>
+<li>DMA/DMA_FLASHToRAM, DMA/DMA_MemToMem_TrustZone</li>
+<li>FLASH/FLASH_BlockBased_TrustZone, FLASH/FLASH_EraseProgram, FLASH/FLASH_EraseProgram_TrustZone, FLASH/FLASH_WriteProtection</li>
+<li>GPIO/GPIO_EXTI, GPIO/GPIO_IOToggle, GPIO/GPIO_IOToggle_TrustZone</li>
+<li>GTZC/GTZC_TZSC_MPCBB_TrustZone</li>
+<li>HAL/HAL_TimeBase, HAL/HAL_TimeBase_RTC_WKUP, HAL/HAL_TimeBase_TIM</li>
+<li>HASH/HASH_HMAC_SHA256MD5_IT_Suspension, HASH/HASH_SHA1MD5, HASH/HASH_SHA1SHA224_IT_Suspension, HASH/HASH_SHA1_DMA_TrustZone, HASH/HASH_SHA224SHA256_DMA</li>
+<li>HSEM/HSEM_ProcessSync, HSEM/HSEM_ReadLock</li>
+<li>I2C/I2C_TwoBoards_AdvComIT, I2C/I2C_TwoBoards_ComDMA, I2C/I2C_TwoBoards_ComDMA_Autonomous_Master, I2C/I2C_TwoBoards_ComDMA_Autonomous_Slave, I2C/I2C_TwoBoards_ComIT, I2C/I2C_TwoBoards_ComPolling, I2C/I2C_TwoBoards_RestartAdvComIT, I2C/I2C_TwoBoards_RestartComIT, I2C/I2C_WakeUpFromStop</li>
+<li>IWDG/IWDG_WindowMode</li>
+<li>LPTIM/LPTIM_PulseCounter, LPTIM/LPTIM_Timeout</li>
+<li>PKA/PKA_ECCscalarMultiplication, PKA/PKA_ECCscalarMultiplication_IT, PKA/PKA_ECDSA_Sign, PKA/PKA_ECDSA_Sign_IT, PKA/PKA_ECDSA_Verify, PKA/PKA_ECDSA_Verify_IT, PKA/PKA_ModularExponentiation, PKA/PKA_ModularExponentiationCRT, PKA/PKA_ModularExponentiationCRT_IT, PKA/PKA_ModularExponentiation_IT, PKA/PKA_PointCheck, PKA/PKA_PointCheck_IT</li>
+<li>PWR/PWR_SLEEP, PWR/PWR_STANDBY, PWR/PWR_STOP1</li>
+<li>RAMCFG/RAMCFG_Parity_Error, RAMCFG/RAMCFG_WriteProtection</li>
+<li>RCC/RCC_ClockConfig, RCC/RCC_ClockConfig_TrustZone, RCC/RCC_LSEConfig, RCC/RCC_LSIConfig</li>
+<li>RNG/RNG_MultiRNG, RNG/RNG_MultiRNG_IT</li>
+<li>RTC/RTC_Alarm, RTC/RTC_Calendar, RTC/RTC_LSI, RTC/RTC_Tamper, RTC/RTC_TimeStamp, RTC/RTC_TrustZone</li>
+<li>SPI/SPI_FullDuplex_ComDMA_Autonomous_Master, SPI/SPI_FullDuplex_ComDMA_Autonomous_Slave</li>
+<li>SPI/SPI_FullDuplex_ComDMA_Master, SPI/SPI_FullDuplex_ComDMA_Slave, SPI/SPI_FullDuplex_ComIT_Master, SPI/SPI_FullDuplex_ComIT_Slave, SPI/SPI_FullDuplex_ComPolling_Master, SPI/SPI_FullDuplex_ComPolling_Slave</li>
+<li>TIM/TIM_ExtTriggerSynchro, TIM/TIM_InputCapture, TIM/TIM_OCActive, TIM/TIM_OCInactive, TIM/TIM_OCToggle, TIM/TIM_OnePulse, TIM/TIM_PWMInput, TIM/TIM_PWMOutput, TIM/TIM_TimeBase</li>
+<li>UART/UART_HyperTerminal_DMA, UART/UART_HyperTerminal_IT, UART/UART_Printf, USART/USART_SlaveMode</li>
+<li>WWDG/WWDG_Example</li>
+</ul></li>
+<li>NUCLEO-WBA52CG/Examples_LL (49 projects)
+<ul>
+<li>ADC/ADC_AnalogWatchdog_Init, ADC/ADC_ContinuousConversion_TriggerSW_Init, ADC/ADC_Oversampling_Init, ADC/ADC_SingleConversion_TriggerSW_Init, ADC/ADC_SingleConversion_TriggerSW_IT_Init, ADC/ADC_TemperatureSensor_Init</li>
+<li>CORTEX/CORTEX_MPU</li>
+<li>CRC/CRC_CalculateAndCheck, CRC/CRC_UserDefinedPolynomial</li>
+<li>DMA/DMA_CopyFromFlashToMemory_Init</li>
+<li>EXTI/EXTI_ToggleLedOnIT_Init</li>
+<li>GPIO/GPIO_InfiniteLedToggling_Init</li>
+<li>HSEM/HSEM_DualProcess, HSEM/HSEM_DualProcess_IT</li>
+<li>I2C/I2C_OneBoard_Communication_DMAAndIT_Init, I2C/I2C_OneBoard_Communication_IT_Init, I2C/I2C_OneBoard_Communication_PollingAndIT_Init, I2C/I2C_TwoBoards_MasterRx_SlaveTx_IT_Init, I2C/I2C_TwoBoards_MasterTx_SlaveRx_DMA_Init, I2C/I2C_TwoBoards_MasterTx_SlaveRx_Init</li>
+<li>LPTIM/LPTIM_PulseCounter_Init</li>
+<li>PKA/PKA_ECDSA_Sign</li>
+<li>PWR/PWR_EnterStopMode</li>
+<li>RCC/RCC_OutputSystemClockOnMCO, RCC/RCC_UseHSEasSystemClock, RCC/RCC_UseHSI_PLLasSystemClock</li>
+<li>RNG/RNG_GenerateRandomNumbers, RNG/RNG_GenerateRandomNumbers_IT</li>
+<li>RTC/RTC_Alarm_Init, RTC/RTC_Calendar_Init, RTC/RTC_ExitStandbyWithWakeUpTimer_Init, RTC/RTC_Tamper_Init, RTC/RTC_TimeStamp_Init</li>
+<li>SPI/SPI_OneBoard_HalfDuplex_IT_Init</li>
+<li>TIM/TIM_BreakAndDeadtime_Init, TIM/TIM_InputCapture_Init, TIM/TIM_OutputCompare_Init, TIM/TIM_PWMOutput_Init, TIM/TIM_TimeBase_Init</li>
+<li>USART/USART_Communication_Rx_IT_Continuous_Init, USART/USART_Communication_Rx_IT_Continuous_VCP_Init, USART/USART_Communication_Rx_IT_Init, USART/USART_Communication_Rx_IT_VCP_Init, USART/USART_Communication_Tx_Init, USART/USART_Communication_Tx_IT_Init, USART/USART_Communication_Tx_IT_VCP_Init, USART/USART_Communication_Tx_VCP_Init, USART/USART_HardwareFlowControl_Init</li>
+<li>WWDG/WWDG_RefreshUntilUserEvent_Init</li>
+</ul></li>
+<li>NUCLEO-WBA52CG/Examples_MIX (8 projects)
+<ul>
+<li>ADC/ADC_SingleConversion_TriggerSW_IT</li>
+<li>CRC/CRC_PolynomialUpdate</li>
+<li>DMA/DMA_FLASHToRAM</li>
+<li>I2C/I2C_OneBoard_ComSlave7_10bits_IT</li>
+<li>PWR/PWR_STOP1</li>
+<li>TIM/TIM_PWMInput</li>
+<li>UART/UART_HyperTerminal_IT, UART/UART_HyperTerminal_TxPolling_RxIT</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Applications SBSFU/TFM
+<ul>
+<li>NUCLEO-WBA52CG/Applications/SBSFU</li>
+<li>NUCLEO-WBA52CG/Applications/TFM</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Application OpenBootloader
+<ul>
+<li>NUCLEO-WBA52CG/Applications/OpenBootloader</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Applications AzureRTOS supporting AzureRTOS 6.2.0
+<ul>
+<li>NUCLEO-WBA52CG/Applications/FileX/Fx_File_Edit_Standalone</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_CMSIS_Wrapper</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_FreeRTOS_Wrapper</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_LowPower</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_MPU</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_Thread_Creation</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_Thread_MsgQueue</li>
+<li>NUCLEO-WBA52CG/Applications/ThreadX/Tx_Thread_Sync</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Applications to demonstrate Utilities
+<ul>
+<li>NUCLEO-WBA52CG/Applications/LPM/Tiny_lpm_3modes</li>
+<li>NUCLEO-WBA52CG/Applications/Sequencer/Sequencer_gpio_toggle</li>
+<li>NUCLEO-WBA52CG/Applications/Sequencer/Sequencer_gpio_toggle_lowpower</li>
+<li>NUCLEO-WBA52CG/Applications/Sequencer/Sequencer_task_pauseresume</li>
+<li>NUCLEO-WBA52CG/Applications/Sequencer/Sequencer_task_prio</li>
+<li>NUCLEO-WBA52CG/Applications/Sequencer/Sequencer_task_waitevent</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/EWARMv8_STM32WBAx_V1.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.37</td>
+<td style="text-align: left;"><a href="../Utilities/PC_Software/Keil.STM32WBAx_DFP.1.0.0.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE V1.12.0 (GCC11)</td>
+<td>V1.12.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IAR V9.20 limitation detected during the validation of STM32WBAxx Examples with TrustZone enabled:
+<ul>
+<li>Return from non-secure callable function call with FPU enabled and optimization set to High size may led to HardFault due to incorrect code generation</li>
+<li>Workaround is to disable the optimization on the non-secure callable function as shared by IAR (while preserving the default FPU enabled product config) <a href="https://netstorage.iar.com/FileStore/STANDARD/001/001/322/arm/doc/infocenter/iccarm.ENU.html#features">EWARM-9484</a></li>
+</ul></li>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP drivers and STMicroelectronics Middleware components</li>
+<li>To enable GCC11 with STM32CubeIDE, please refer STM32CubeIDE user guide (UM2609 - chapter “Toolchain manager”)</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards-11">Supported Devices and boards</h2>
+<ul>
+<li>STM32WBA52xx devices</li>
+<li>NUCLEO-WBA52CG board</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations-11">Known Limitations</h2>
+<ul>
+<li>HAL/LL Examples
+<ul>
+<li>All examples are developed using CubeMx except HASH/HASH_SHA1SHA224_IT_Suspension (not eligible)</li>
+<li>All LL/HAL Examples are provided with EWARM, MDK-ARM and STM32CubeIDE support except:
+<ul>
+<li>Examples: CRYP/CRYP_GCM_GMAC_CMAC_Suspension, HASH/HASH_SHA1_DMA_TrustZone (only EWARM)</li>
+<li>Examples: GTZC/GTZC_TZSC_MPCBB_TrustZone, RTC/RTC_TrustZone (only EWARM/MDK-ARM)</li>
+<li>Examples: CRYP/CRYP_AESModes, CRYP/CRYP_DMA, ADC/ADC_MultiChannelSingleConversion (only EWARM/STM32CubeIDE)</li>
+<li>Examples_LL: LPTIM/LPTIM_PulseCounter_Init, TIM/TIM_OnePulse_Init (only EWARM)</li>
+</ul></li>
+</ul></li>
+<li>MW WPAN/BLE Applications
+<ul>
+<li>Applications based on ThreadX do not currently support Standby mode</li>
+<li>System Clock Manager (scm) : PLL is not supported with BLE applications</li>
+<li>Systick is not currently supported in Standby mode in delivered BLE applications</li>
+<li>All BLE applications are developed using CubeMx except BLE/BLE_ApplicationInstallManager (not eligible)</li>
+<li>Only BLE/BLE_HeartRate application is provided with EWARM, MDK-ARM and STM32CubeIDE support</li>
+<li>All other BLE applications are provided with EWARM and STM32CubeIDE support except:
+<ul>
+<li>BLE/BLE_ApplicationInstallManager (only EWARM)</li>
+<li>BLE/BLE_HeartRate_ota (only EWARM)</li>
+<li>BLE/BLE_p2pServerThreadX (only EWARM)</li>
+<li>BLE/BLE_p2pServer_ota (only EWARM)</li>
+</ul></li>
+<li>STM32CubeIDE support: the Debug configuration optimization level has to be set to -Os</li>
+</ul></li>
+<li>MW AzureRTOS Applications
+<ul>
+<li>All AzureRTOS applications are developed using CubeMx except ThreadX/Tx_MPU (not eligible)</li>
+</ul></li>
+<li>MW OpenBootloader Application
+<ul>
+<li>OpenBootloader application is not developed using CubeMx (not eligible)</li>
+</ul></li>
+<li>MW SBSFU/TFM Applications
+<ul>
+<li>All SBSFU/TFM applications are not developed using CubeMx (not eligible) and are provided with EWARM and STM32CubeIDE support</li>
+</ul></li>
+<li>Utilities Applications
+<ul>
+<li>All Utilities applications are developed using CubeMx and are only provided with EWARM support</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies-11">Dependencies</h2>
+<ul>
+<li>STM32CubeMX V6.8.0
+<ul>
+<li>Projects (Applications and Examples) are generated using STM32CubeMX version V6.8.0.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="backward-compatibility-7">Backward compatibility</h2>
+<ul>
+<li>Not applicable</li>
+</ul>
+<h2 id="notes-11">Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<p><br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<div class="columns">
+<div class="column" style="width:95%;">
+<p>For complete documentation on STM32WBAxx, visit: <a href="http://www.st.com/stm32wba">www.st.com/stm32wba</a></p>
+<p><em>This release note uses up to date web standards and, for this reason, should not be opened with Internet Explorer but preferably with popular browsers such as Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.</em></p>
+</div><div class="column" style="width:5%;">
+<p><abbr title="Based on template cx626901 version 2.0">Info</abbr></p>
+</div>
+</div>
+</footer>
+</body>
+</html>
